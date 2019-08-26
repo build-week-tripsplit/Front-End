@@ -54,7 +54,11 @@ const FormikSignUpForm = withFormik({
         email: Yup.string().email("Email not valid").required('Email Required'),
         username: Yup.string().required('Username Required'),
         password: Yup.string().min(8, "Password must be 8 characters or longer").required('Password Required'),
-    })
+    }),
+
+    handleSubmit(values, { setStatus }) {
+        setStatus(values);
+    }
 })(SignUpForm);
 
 export default FormikSignUpForm;
