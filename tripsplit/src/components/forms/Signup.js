@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Field, withFormik } from "formik"
 import * as Yup from "yup"
 
 
-const SignUpForm = () => {
+const SignUpForm = ({ errors, touched, status }) => {
     const [users, setUsers] = useState([]);
-
+    useEffect(() => {
+        if (status) {
+            setUsers([...users, status]);
+        }
+    }, [status])
     return (
         <div className="sign-up form">
             <h2>Let's Get Started</h2>
