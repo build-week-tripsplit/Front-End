@@ -15,26 +15,41 @@ const SignUpForm = ({ errors, touched, status }) => {
             <h2>Let's Get Started</h2>
             <Form>
                 <div className="form-input name">
-                    <label htmlFOr="fName">First Name: </label>
+                    <label htmlFor="fName">First Name: </label>
                     <Field type="text" name="fName" placeholder="First Name" />
+                    {touched.fName && errors.fName && (
+                        <p>{errors.fName}</p>
+                    )}
                 </div>
                 <div className="form-input name">
-                    <label htmlFOr="lName">Last Name: </label>
+                    <label htmlFor="lName">Last Name: </label>
                     <Field type="text" name="lName" placeholder="Last Name" />
+                    {touched.lName && errors.lName && (
+                        <p>{errors.lName}</p>
+                    )}
                 </div>
                 <div className="form-input">
-                    <label htmlFOr="email">Email Address: </label>
+                    <label htmlFor="email">Email Address: </label>
                     <Field type="email" name="email" placeholder="Email Address" />
+                    {touched.email && errors.email && (
+                        <p>{errors.email}</p>
+                    )}
                 </div>
                 <div className="form-input">
-                    <label htmlFOr="username">Username: </label>
+                    <label htmlFor="username">Username: </label>
                     <Field type="text" name="username" placeholder="Username" />
+                    {touched.username && errors.username && (
+                        <p>{errors.username}</p>
+                    )}
                 </div>
                 <div className="form-input">
-                    <label htmlFOr="password">Password: </label>
+                    <label htmlFor="password">Password: </label>
                     <Field type="text" name="password" placeholder="Password" />
+                    {touched.password && errors.password && (
+                        <p>{errors.password}</p>
+                    )}
                 </div>
-                <button>Sign Up</button>
+                <button type="submit">Sign Up</button>
             </Form>
         </div>
     )
