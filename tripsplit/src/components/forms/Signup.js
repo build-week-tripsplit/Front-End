@@ -4,12 +4,13 @@ import * as Yup from "yup"
 
 
 const SignUpForm = ({ errors, touched, status }) => {
-    const [users, setUsers] = useState([]);
+    const [user, setUser] = useState({});
     useEffect(() => {
         if (status) {
-            setUsers([...users, status]);
+            setUser(status);
         }
-    }, [status])
+    }, [status]);
+    console.log(user);
     return (
         <div className="sign-up form">
             <h2>Let's Get Started</h2>
