@@ -1,16 +1,17 @@
 import React from "react";
 import Header from "./header/Header";
 import NavBar from "./header/NavBar"
-import TripForm from "./forms/TripForm";
 
-const CreateTrip = () => {
+const IndividualTrip = () => {
     return (
         <>
             <Header />
             <NavBar />
-            <TripForm />
+            {/* Individual Trip Information Here */}
+
+            {/* Expense List Component Here */}
         </>
     )
 }
 
-export default CreateTrip;
+export default IndividualTrip;

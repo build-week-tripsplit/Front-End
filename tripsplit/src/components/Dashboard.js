@@ -4,9 +4,11 @@ import NavBar from "./header/NavBar"
 
 const Dashboard = () => {
     return (
-        <Header />
-        <NavBar />
-        //Expense List Component Here
+        <>
+            <Header />
+            <NavBar />
+            {/* Expense List Component Here */}
+        </>
     )
 }
 

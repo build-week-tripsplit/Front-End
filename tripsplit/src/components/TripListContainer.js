@@ -4,10 +4,12 @@ import NavBar from "./header/NavBar"
 
 const TripListContainer = () => {
     return (
-        <Header />
-        <NavBar />
-        <button>Create Trip</button>
-        //Trips List Component Here
+        <>
+            <Header />
+            <NavBar />
+            <button>Create Trip</button>
+            {/* Trips List Component Here */}
+        </>
     )
 }
 

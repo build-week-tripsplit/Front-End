@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "./header/Header";
 import NavBar from "./header/NavBar"
-import TripForm from "./forms/TripForm";
+import ExpenseForm from "./forms/ExpensesForm";
 
-const CreateTrip = () => {
+const CreateExpense = () => {
     return (
         <>
             <Header />
             <NavBar />
-            <TripForm />
+            <ExpenseForm />
         </>
     )
 }
 
-export default CreateTrip;
+export default CreateExpense;

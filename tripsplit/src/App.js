@@ -10,6 +10,8 @@ import LandingPage from './components/LandingPage';
 import Dashboard from "./components/Dashboard";
 import TripListContainer from "./components/TripListContainer";
 import CreateTrip from "./components/CreateTrip"
+import IndividualTrip from "./components/IndividualTripContainer"
+import CreateExpense from "./components/CreateExpense";
 
 function App() {
   return (
@@ -20,8 +22,8 @@ function App() {
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/triplist" component={TripListContainer} />
       <Route path="/createTrip" component={CreateTrip} />
-      {/* <Route path="/triplist/:id" component={}  DYNAMIC INDIVIDUAL TRIP COMPONENT ROUTE /> */}
-      {/* <Route path="/expenseform" component={}  EXPENSE FORM COMPONENT ROUTE /> */}
+      <Route path="/triplist/:id" component={IndividualTrip} />
+      <Route path="/expenseform" component={CreateExpense} />
     </div>
   );
 }
