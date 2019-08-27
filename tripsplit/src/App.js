@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route } from "react-router-dom";
+
+import 'semantic-ui-css/semantic.min.css';
 import './App.css';
+
+import SignUp from "./components/forms/Signup";
+import Login from "./components/forms/Login";
+import LandingPage from './components/LandingPage';
+import Dashboard from "./components/Dashboard";
+import TripListContainer from "./components/TripListContainer";
+import CreateTrip from "./components/CreateTrip"
+import IndividualTrip from "./components/IndividualTripContainer"
+import CreateExpense from "./components/CreateExpense";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route exact path='/' component={LandingPage} />
+      <Route path="/login" component={Login} />
+      <Route path="/register" component={SignUp} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/triplist" component={TripListContainer} />
+      <Route path="/createTrip" component={CreateTrip} />
+      <Route path="/triplist/:id" component={IndividualTrip} />
+      <Route path="/expenseform" component={CreateExpense} />
     </div>
   );
 }
