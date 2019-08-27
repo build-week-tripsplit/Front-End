@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 
+import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 
 import SignUp from "./components/forms/Signup";
@@ -17,6 +18,7 @@ function App() {
       {/* <Route path="/triplist" component={}  TRIPLIST COMPONENT ROUTE /> */}
       {/* <Route path="/tripform" component={}  TRIPFORM COMPONENT ROUTE /> */}
       {/* <Route path="/triplist/:id" component={}  DYNAMIC INDIVIDUAL TRIP COMPONENT ROUTE /> */}
+      {/* <Route path="/expenseform" component={}  EXPENSE FORM COMPONENT ROUTE /> */}
     </div>
   );
 }
