@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.expenses-list {
+  border: 1px solid gold;
+  margin: 10px 0;
+}
+
+.expenses-summary {
+  background: tan;
+  border: 1px solid black;
+  margin: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.expenses-summary h2 {
+  padding-left: 30px;
+}
+
+.expense {
+  background: DarkCyan;
+  border: 1px solid black;
+  margin: 5px 15%;
+}
