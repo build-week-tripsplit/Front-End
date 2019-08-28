@@ -1,39 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { Form, Field, withFormik } from "formik"
-import * as Yup from "yup"
-
+import React from 'react';
+import { Form, Field, withFormik } from 'formik';
+import axios from 'axios';
+import * as Yup from 'yup';
 
 const SignUpForm = ({ errors, touched, status }) => {
-    const [user, setUser] = useState({});
-    useEffect(() => {
-        if (status) {
-            setUser(status);
-        }
-    }, [status]);
-    console.log(user);
     return (
         <div className="sign-up-form">
             <h3>Let's Get Started</h3>
 
             <Form>
 
+
             <div className="sign-up-fields">
                 <div className="names-div">
                     <div className="form-input name field-item-Fname">
-                        <label htmlFor="fName">First Name: </label>
-                        <Field className="name" type="text" name="fName" placeholder="First Name" />
-                        {touched.fName && errors.fName && (
-                            <p>{errors.fName}</p>
-                        )}
+                        <label htmlFor="firstName">First Name: </label>
+                    <Field type="text" name="firstName" placeholder="First Name" />
+                    {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}
                     </div>
 
                     <div className="form-input name field-item-Lname">
-                        <label htmlFor="lName">Last Name: </label>
-                        <Field className="name" type="text" name="lName" placeholder="Last Name" />
-                        {touched.lName && errors.lName && (
-                            <p>{errors.lName}</p>
-                        )}
+                         <label htmlFor="lastName">Last Name: </label>
+                    <Field type="text" name="lastName" placeholder="Last Name" />
+                    {touched.lastName && errors.lastName && <p>{errors.lastName}</p>}
                     </div>
+
                 </div>
 
                     <div className="form-input field-item">
@@ -64,31 +55,49 @@ const SignUpForm = ({ errors, touched, status }) => {
                 <button className="button-style-main" type="submit">Join</button>
             </Form>
         </div>
-    )
-}
-
+    );
+};
 
 const FormikSignUpForm = withFormik({
-    mapsPropsToValues({ fName, lName, email, username, password }) {
+    mapsPropsToValues({ firstName, lastName, email, username, password }) {
         return {
-            fName: fName || "",
-            lName: lName || "",
-            email: email || "",
-            username: username || "",
-            password: password || ""
-        }
+            firstName: firstName || '',
+            lastName: lastName || '',
+            email: email || '',
+            username: username || '',
+            password: password || ''
+        };
     },
 
     validationSchema: Yup.object().shape({
-        fName: Yup.string().required('First Name Required'),
-        lName: Yup.string().required('Last Name Required'),
-        email: Yup.string().email("Email not valid").required('Email Required'),
+        firstName: Yup.string().required('First Name Required'),
+        lastName: Yup.string().required('Last Name Required'),
+        email: Yup.string()
+            .email('Email not valid')
+            .required('Email Required'),
         username: Yup.string().required('Username Required'),
-        password: Yup.string().min(8, "Password must be 8 characters or longer").required('Password Required'),
+        password: Yup.string()
+            .min(8, 'Password must be 8 characters or longer')
+            .required('Password Required')
     }),
 
-    handleSubmit(values, { setStatus }) {
-        setStatus(values);
+    handleSubmit(values, { props }) {
+        const register = {
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            username: values.username,
+            password: values.password
+        };
+        axios
+            .post('https://tripsplit-backend.herokuapp.com/api/auth/register', register)
+            .then(res => {
+                console.log(res);
+                props.history.push('/login');
+            })
+            .catch(err => {
+                console.log(err.response);
+            });
     }
 })(SignUpForm);
 
