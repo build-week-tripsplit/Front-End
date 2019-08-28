@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "./header/Header";
-import NavBar from "./header/NavBar"
+import NavBar from "./header/NavBar";
+import ExpenseList from "./ExpensesList";
 
 const Dashboard = () => {
     return (
         <>
             <Header />
             <NavBar />
-            {/* Expense List Component Here */}
+            <ExpenseList />
         </>
     )
 }
