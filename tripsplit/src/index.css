@@ -222,12 +222,13 @@ h3 {
 
 
 .expenses-list {
-  border: 1px solid gold;
+  background: #E3E5E8;
   margin: 10px 0;
+  margin-bottom: 20px;
 }
 
 .expenses-summary {
-  background: tan;
+  background: #E3E5E8;
   border: 1px solid black;
   margin: 10px 0;
   display: flex;
@@ -239,7 +240,21 @@ h3 {
 }
 
 .expense {
-  background: DarkCyan;
+  background: white;
   border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: .5px 1px;
   margin: 5px 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense h3 {
+  padding-left: 10%;
+}
+
+.expense p {
+  color: red;
+  padding-right: 10%;
 }
