@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "./header/Header";
 import NavBar from "./header/NavBar"
 import axios from "axios";
@@ -24,6 +25,7 @@ const IndividualTrip = (props) => {
             <Header />
             <NavBar />
             <Trip key={trip.id} trip={trip} />
+            <Link to="/expenseform"><button>Create Expense</button></Link>
             {tripExpenses.map(expense => <Expense expense={expense} />)}
         </>
     )
