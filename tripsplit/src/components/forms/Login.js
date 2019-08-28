@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import * as Yup from "yup";
 // import {Route} from '';
 
-function LogIn(props, { touched, errors }) {
+function LogIn({ props, touched, errors }) {
 
   const [user, setUser] = useState({
     username: "",
@@ -12,8 +12,8 @@ function LogIn(props, { touched, errors }) {
 
   return (
     <div className="login-form">
-    <h3>
-      Welcome back
+      <h3>
+        Welcome back
       </h3>
       <Form
         onSubmit={e => {
@@ -22,24 +22,24 @@ function LogIn(props, { touched, errors }) {
         }}
       >
 
-      <div className="login-fields">
-        <Field
-          name="username"
-          type="text"
-          placeholder="Username"
-          value={user.username}
-          className="field-item"
-        ></Field>
-        {touched.username && errors.username && alert(errors.username)}
+        <div className="login-fields">
+          <Field
+            name="username"
+            type="text"
+            placeholder="Username"
+            value={user.username}
+            className="field-item"
+          ></Field>
+          {touched.username && errors.username && alert(errors.username)}
 
-        <Field
-          name="password"
-          type="text"
-          placeholder="Password"
-          value={user.password}
-          className="field-item"
-        ></Field>
-        {touched.password && errors.password && alert(errors.password)}
+          <Field
+            name="password"
+            type="text"
+            placeholder="Password"
+            value={user.password}
+            className="field-item"
+          ></Field>
+          {touched.password && errors.password && alert(errors.password)}
         </div>
 
         <button className="button-style-main" type="submit">Sign In</button>
