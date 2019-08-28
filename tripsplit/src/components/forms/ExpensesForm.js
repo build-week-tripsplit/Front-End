@@ -40,7 +40,7 @@ const ExpensesForm = () => {
   // date: 1561248000,
   return (
     <>
-      <form className="tripForm">
+      <form className="expenses-form">
         <input
           type="text"
           name="title"
