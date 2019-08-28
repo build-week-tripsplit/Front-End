@@ -98,6 +98,11 @@ h3 {
   border-radius: 5px;
 }
 
+.login-button:active {
+  color: white;
+  background-color: #6DA4F8;
+}
+
 .expenses-list {
   border: 1px solid gold;
   margin: 10px 0;
