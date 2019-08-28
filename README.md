@@ -1,7 +1,4 @@
 # Front-End
-
-# Front-End
-
 Proposal
 
     Description
