@@ -1,6 +1,6 @@
 
 // import TripForm from "./components/forms/TripForm";
-import React from 'react';
+
 import { Route } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
@@ -13,8 +13,11 @@ import CreateTrip from "./components/CreateTrip"
 import IndividualTrip from "./components/IndividualTripContainer"
 import CreateExpense from "./components/CreateExpense";
 
-function App() {
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ExpensesForm from './components/forms/ExpensesForm';
+import TripsList from './components/TripsList';
 
+function App() {
   // const submitUser = user => {
 
   //   axios
@@ -67,6 +70,7 @@ function App() {
       <Route path="/expenseform" component={CreateExpense} />
     </div>
   );
+
 
 }
 
