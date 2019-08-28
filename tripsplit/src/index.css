@@ -56,6 +56,20 @@ code {
   flex-direction: column;
 }
 
+.sign-up-form {
+  width: 50%;
+  align-items: center;
+  height: 80%;
+  position: absolute;
+  top: 0; 
+  bottom: 0; 
+  right: 0; 
+  left: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 h3 {
   font-family: "Helvetica";
   font-size: 16px;
@@ -67,8 +81,17 @@ h3 {
   margin-left: -100px;
 }
 
+.sign-up-form h3 {
+  margin-top: 50px;
+  margin-left: -100px;
+}
+
 .login-form Form {
   margin-top: 30px;
+  width: 90%;
+}
+
+.sign-up-form Form {
   width: 90%;
 }
 
@@ -81,13 +104,62 @@ h3 {
   border-radius: 5px;
 }
 
+.sign-up-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #B9BEC6;
+  border-radius: 5px;
+  color: white;
+  font-family: "Helvetica";
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input label {
+  font-size: 10px;
+
+
+}
+
+.names-div {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  margin-top: 20px;
+}
+
+.field-item-Fname {
+  width: 40%;
+}
+
+.field-item-Fname .name {
+  width: 70%;
+}
+.field-item-Lname {
+  width: 40%;
+}
+
+.field-item-Lname .name {
+  width: 70%;
+}
+
+.field-item-last {
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+
 .field-item {
   margin: 10px 0;
   height: 25px;
-  width: 80%;
+  width: 95%;
 }
 
-.login-button {
+.button-style-main {
   width: 80%;
   height: 35px;
   margin-top: 30px;
@@ -98,7 +170,7 @@ h3 {
   border-radius: 5px;
 }
 
-.login-button:active {
+.button-style-main:active {
   color: white;
   background-color: #6DA4F8;
 }
