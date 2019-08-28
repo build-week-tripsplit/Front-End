@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import * as Yup from "yup";
 // import {Route} from '';
 
-function LogIn({ props, touched, errors }) {
+function LogIn(props, { touched, errors }) {
+
   const [user, setUser] = useState({
     username: "",
     password: ""
