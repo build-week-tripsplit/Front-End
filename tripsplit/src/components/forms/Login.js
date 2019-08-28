@@ -41,7 +41,7 @@ function LogIn({ props, touched, errors }) {
         {touched.password && errors.password && alert(errors.password)}
         </div>
 
-        <button className="login-button" type="submit">Sign In</button>
+        <button className="button-style-main" type="submit">Sign In</button>
       </Form>
     </div>
   );
