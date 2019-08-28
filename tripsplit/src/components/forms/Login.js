@@ -4,37 +4,35 @@ import * as Yup from "yup";
 // import {Route} from '';
 
 function LogIn({ props, touched, errors }) {
+
   const [user, setUser] = useState({
     username: "",
     password: ""
   });
 
   return (
-    <div>
-      Welcome back
+    <div className="login-form">
+      <h3>
+        Welcome back
+      </h3>
       <Form
         onSubmit={e => {
           e.preventDefault();
           props.submitUser(user);
         }}
       >
-        <Field
-          name="username"
-          type="text"
-          placeholder="Username"
-          value={user.username}
-        ></Field>
-        {touched.username && errors.username && alert(errors.username)}
 
-        <Field
-          name="password"
-          type="text"
-          placeholder="Password"
-          value={user.password}
-        ></Field>
-        {touched.password && errors.password && alert(errors.password)}
+        <div className="login-fields">
+          <Field
+            name="username"
+            type="text"
+            placeholder="Username"
+            value={user.username}
+            className="field-item"
+          ></Field>
+          {touched.username && errors.username && alert(errors.username)}
 
-        <button type="submit">Log-In</button>
+
       </Form>
     </div>
   );
