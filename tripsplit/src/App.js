@@ -25,7 +25,7 @@ function App() {
       <Route path="/dashboard" render={() => <Dashboard />} />
       <Route exact path="/triplist" render={() => <TripListContainer />} />
       <Route path="/createTrip" render={() => <CreateTrip />} />
-      <Route path="/triplist/:id" render={() => <IndividualTrip />} />
+      <Route path="/triplist/:id" render={(props) => <IndividualTrip {...props} />} />
       <Route path="/expenseform" render={() => <CreateExpense />} />
     </div>
   );
