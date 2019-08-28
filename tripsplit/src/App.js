@@ -1,5 +1,4 @@
 
-// import TripForm from "./components/forms/TripForm";
 import React from "react";
 import { Route } from 'react-router-dom';
 
@@ -9,11 +8,14 @@ import './App.css';
 import SignUp from "./components/forms/Signup";
 import Login from "./components/forms/Login";
 import LandingPage from './components/LandingPage';
+
 import Dashboard from "./components/Dashboard";
-import TripListContainer from "./components/TripListContainer";
-import CreateTrip from "./components/CreateTrip";
+import Login from "./components/forms/Login";
+import SignUp from "./components/forms/Signup";
 import IndividualTrip from "./components/IndividualTripContainer";
-import CreateExpense from "./components/CreateExpense";
+import LandingPage from "./components/LandingPage";
+import TripListContainer from "./components/TripListContainer";
+
 
 function App() {
 
@@ -28,10 +30,9 @@ function App() {
       <Route path="/createTrip" render={() => <CreateTrip />} />
       <Route path="/triplist/:id" render={(props) => <IndividualTrip {...props} />} />
       <Route path="/expenseform" render={() => <CreateExpense />} />
+
     </div>
   );
-
-
 }
 
 export default App;

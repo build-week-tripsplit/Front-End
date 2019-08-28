@@ -38,3 +38,18 @@
   margin: auto;
   width: 150px;
 }
+
+.tripFriends {
+  display: flex;
+  flex-direction: row;
+}
+
+.addFriendButton {
+  margin: 10px;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}

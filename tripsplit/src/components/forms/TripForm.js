@@ -2,102 +2,98 @@ import React, { useState } from "react";
 
 const TripForm = () => {
   const [state, setState] = useState({});
+  const [fields, setFields] = useState([{ value: null }]);
 
-  const updatePerson = obj => {
-    setState({ ...state, obj });
-    // props.update(state);
-  };
-  function handleSubmit() {
-    setState({ ...state, state });
+  console.log("fields", fields);
+  function handleSubmit(e) {
+    e.preventDefault();
+    setState({ ...state, fields, state });
   }
-
+  console.log("state", state);
   function handleChanges(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
+  function handleChange(i, event) {
+    const values = [...fields];
+    values[i].value = event.target.value;
+    setFields(values);
+  }
 
+  function handleAdd() {
+    const values = [...fields];
+    values.push({ value: null });
+    setFields(values);
+  }
+
+  function handleRemove(i) {
+    const values = [...fields];
+    values.splice(i, 1);
+    setFields(values);
+  }
   return (
     <>
-      <form>
+      <form className="tripForm">
         <input
           type="text"
           name="title"
+          placeholder="Trip Name"
           value={state.title}
           onChange={handleChanges}
         />
         <input
           type="text"
           name="description"
+          placeholder="Trip description"
           value={state.description}
           onChange={handleChanges}
         />
         <input
           type="text"
           name="location"
+          placeholder="Trip location"
           value={state.location}
           onChange={handleChanges}
         />
         <input
           type="date"
           name="startDate"
+          placeholder="Start Date"
           value={state.startDate}
           onChange={handleChanges}
         />
         <input
           type="date"
           name="endDate"
+          placeholder="EndDate"
           value={state.endDate}
           onChange={handleChanges}
         />
-        <ArrayFields updatePerson={updatePerson} />
-        <button onClick={handleSubmit}>Update</button>
+        <button
+          className="addFriendButton"
+          type="button"
+          onClick={() => handleAdd()}
+        >
+          + Add Friend
+        </button>
+
+        {fields.map((field, idx) => {
+          return (
+            <div className="tripFriends" key={`${field}-${idx}`}>
+              <input
+                type="text"
+                placeholder="Enter text"
+                onChange={e => handleChange(idx, e)}
+              />
+              <button type="button" onClick={() => handleRemove(idx)}>
+                X
+              </button>
+            </div>
+          );
+        })}
+        <button onClick={handleSubmit}>Submit</button>
       </form>
     </>
   );
 };
-
-function ArrayFields(props) {
-  const [person, setPerson] = useState([]);
-
-  return (
-    <div>
-      {person.length &&
-        person.map(per => (
-          <>
-            <p>{per.name}</p>
-            <p>{per.email}</p>
-          </>
-        ))}
-      <Friends setPerson={setPerson} person={person} />
-      <button onClick={() => props.updatePerson(person)}>Update</button>
-    </div>
-  );
-}
-
-function Friends(props) {
-  const [values, setValues] = useState({
-    name: "",
-    email: ""
-  });
-
-  function handleFriends(e) {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  }
-
-  return (
-    <form
-      onSubmit={() => {
-        props.setPerson([...values, values]);
-        setValues({
-          name: "",
-          email: ""
-        });
-      }}
-    >
-      <input type="text" name="name" onChange={handleFriends} />
-      <input type="text" name="email" onChange={handleFriends} />
-      <button>Add Another Person</button>
-    </form>
-  );
-}
 
 export default TripForm;

@@ -32,22 +32,10 @@ function LogIn({ props, touched, errors }) {
           ></Field>
           {touched.username && errors.username && alert(errors.username)}
 
-          <Field
-            name="password"
-            type="text"
-            placeholder="Password"
-            value={user.password}
-            className="field-item"
-          ></Field>
-          {touched.password && errors.password && alert(errors.password)}
-        </div>
 
-        <button className="button-style-main" type="submit">Sign In</button>
       </Form>
     </div>
   );
-
-
 }
 
 const FormikLogin = withFormik({
