@@ -5,6 +5,7 @@ import Header from "./header/Header";
 import NavBar from "./header/NavBar"
 import TripList from "./TripsList"
 
+
 const TripListContainer = () => {
     return (
         <>

@@ -1,18 +1,19 @@
 
 // import TripForm from "./components/forms/TripForm";
 import React from "react";
+import { Route } from 'react-router-dom';
+
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
+
 import SignUp from "./components/forms/Signup";
 import Login from "./components/forms/Login";
 import LandingPage from './components/LandingPage';
 import Dashboard from "./components/Dashboard";
 import TripListContainer from "./components/TripListContainer";
-import CreateTrip from "./components/CreateTrip"
-import IndividualTrip from "./components/IndividualTripContainer"
+import CreateTrip from "./components/CreateTrip";
+import IndividualTrip from "./components/IndividualTripContainer";
 import CreateExpense from "./components/CreateExpense";
-
-import { Route } from 'react-router-dom';
 
 function App() {
 

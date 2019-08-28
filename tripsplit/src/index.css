@@ -56,8 +56,22 @@ code {
   flex-direction: column;
 }
 
+.sign-up-form {
+  width: 50%;
+  align-items: center;
+  height: 80%;
+  position: absolute;
+  top: 0; 
+  bottom: 0; 
+  right: 0; 
+  left: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 h3 {
-  font-family: "Helvetica";
+  font-family: "Roboto Bold", sans-serif;
   font-size: 16px;
   color: #5C6070;
 }
@@ -67,8 +81,17 @@ h3 {
   margin-left: -100px;
 }
 
+.sign-up-form h3 {
+  margin-top: 50px;
+  margin-left: -100px;
+}
+
 .login-form Form {
   margin-top: 30px;
+  width: 90%;
+}
+
+.sign-up-form Form {
   width: 90%;
 }
 
@@ -81,13 +104,61 @@ h3 {
   border-radius: 5px;
 }
 
+.sign-up-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #B9BEC6;
+  border-radius: 5px;
+  color: white;
+  font-family: "Roboto Regular", 'sans-serif';
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input label {
+  font-size: 12px;
+  font-family: "Roboto Bold", sans-serif;
+}
+
+.names-div {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  margin-top: 20px;
+}
+
+.field-item-Fname {
+  width: 40%;
+}
+
+.field-item-Fname .name {
+  width: 70%;
+}
+.field-item-Lname {
+  width: 40%;
+}
+
+.field-item-Lname .name {
+  width: 70%;
+}
+
+.field-item-last {
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+
 .field-item {
   margin: 10px 0;
   height: 25px;
-  width: 80%;
+  width: 95%;
 }
 
-.login-button {
+.button-style-main {
   width: 80%;
   height: 35px;
   margin-top: 30px;
@@ -97,6 +168,58 @@ h3 {
   border: 2px solid #6DA4F8;
   border-radius: 5px;
 }
+
+.button-style-main:active {
+  color: white;
+  background-color: #6DA4F8;
+}
+
+.landing-page {
+  width: 100%;
+  height: 100%;
+}
+
+.landing-div {
+  /* margin-top: 20px; */
+}
+
+.landing-div h1 {
+  font-size: 48px;
+  font-family: "Roboto Bold", 'sans-serif';
+  color: #6DA4F8;
+}
+
+.landing-div h4,p {
+  font-size: 18px;
+}
+
+.landing-div button {
+  width: 40%;
+  background-color: #6DA4F8;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.sign-in-div {
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-in-div p {
+  line-height: center;
+}
+
+
+.sign-in-link {
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 100%;
+  padding-left: 10px;
+}
+
 
 .expenses-list {
   border: 1px solid gold;

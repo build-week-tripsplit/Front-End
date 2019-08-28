@@ -4,25 +4,31 @@ import * as Yup from "yup";
 // import {Route} from '';
 
 function LogIn(props, { touched, errors }) {
+
   const [user, setUser] = useState({
     username: "",
     password: ""
   });
 
   return (
-    <div>
+    <div className="login-form">
+    <h3>
       Welcome back
+      </h3>
       <Form
         onSubmit={e => {
           e.preventDefault();
           props.submitUser(user);
         }}
       >
+
+      <div className="login-fields">
         <Field
           name="username"
           type="text"
           placeholder="Username"
           value={user.username}
+          className="field-item"
         ></Field>
         {touched.username && errors.username && alert(errors.username)}
 
@@ -31,11 +37,12 @@ function LogIn(props, { touched, errors }) {
           type="text"
           placeholder="Password"
           value={user.password}
+          className="field-item"
         ></Field>
         {touched.password && errors.password && alert(errors.password)}
+        </div>
 
-
-        <button type="submit">Log-In</button>
+        <button className="button-style-main" type="submit">Sign In</button>
       </Form>
     </div>
   );
