@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {Link, Route} from 'react-router-dom';
 import Expense from './Expense';
 import mockData from './mockdata_todelete';
 import axios from 'axios';
@@ -19,14 +18,17 @@ const ExpensesList = props => {
           });
       }, []);
 
-      // const calcTotal = props => {
-      //   const expenseTotal = 0;
-  
-      //   mockData.forEach(item => {
-      //     expenseTotal = expenseTotal + mockData.amount;
-      //   })
-      //   return expenseTotal;
-      // }
+      const calcTotal = props => {
+        let expenseTotal = 0;
+
+        mockData.forEach(item => {
+          
+          expenseTotal = expenseTotal + item.amount;
+        })
+        console.log(expenseTotal);
+        return expenseTotal;
+      }
+      const userTotal = calcTotal();
       // console.log('expenseTotal is: ' + calcTotal)
 
 
@@ -35,10 +37,8 @@ const ExpensesList = props => {
 
     <div className="expenses-list">
       <div className="expenses-summary">
-      <h2>Your Summary:  
-      {/* {calcTotal} */}
-      {/* TO DO: Add code to display total price of all user's expenses.  */}
-      spent.</h2></div>
+      <h2>Your Summary: ${userTotal} spent.</h2>
+      </div>
         
         {/* {console.log('calcTotal is: ' + calcTotal)} */}
 
