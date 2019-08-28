@@ -14,6 +14,7 @@ const IndividualTrip = (props) => {
             .then(response => setTrip(response.data))
             .catch(error => console.log('Error: IndividualTripContainer.js: TripGet: ', error));
 
+        //Change endpoint to grab user specific expsenses. Or user & trip specific expenses
         axios.get(`https://tripsplit-backend.herokuapp.com/api/expenses`)
             .then(response => setTripExpenses(response.data.filter(expense => expense.trip_id === Number(id))))
             .catch(error => console.log('Error: IndividualTripContainer.js: ExpenseGet: ', error));
