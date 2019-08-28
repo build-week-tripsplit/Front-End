@@ -42,6 +42,7 @@ const FormikExpensesForm = withFormik({
     handleSubmit(values, { props, resetForm, setSubmitting }) {
         // Some logic
     }
+
 })(ExpensesForm);
 
 export default FormikExpensesForm;
