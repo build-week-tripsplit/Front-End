@@ -1,7 +1,8 @@
 import { Field, Form, withFormik } from 'formik';
 import React from 'react';
+import { connect } from 'react-redux';
 import * as Yup from 'yup';
-import { axize } from '../../utils';
+import { userLogin } from '../../actions/userLogin';
 // import {Route} from '';
 
 function LogIn({ touched, errors }) {
@@ -12,7 +13,7 @@ function LogIn({ touched, errors }) {
                 <Field name="username" type="text" placeholder="Username"></Field>
                 {touched.username && errors.username && alert(errors.username)}
 
-                <Field name="password" type="text" placeholder="Password"></Field>
+                <Field name="password" type="password" placeholder="Password"></Field>
                 {touched.password && errors.password && alert(errors.password)}
 
                 <button type="submit">Log-In</button>
@@ -37,17 +38,21 @@ const FormikLogin = withFormik({
     }),
 
     handleSubmit(values, { props }) {
-        axize()
-            .post('https://tripsplit-backend.herokuapp.com/api/auth/login', values)
-            .then(res => {
-                console.log(res);
-                localStorage.setItem('token', res.data.token);
-                props.history.push('/dashboard');
-            })
-            .catch(err => {
-                console.log(err.response);
-            });
+        props.userLogin(props.history, values);
+        // axize()
+        //     .post('https://tripsplit-backend.herokuapp.com/api/auth/login', values)
+        //     .then(res => {
+        //         console.log(res);
+        //         localStorage.setItem('token', res.data.token);
+        //         props.history.push('/dashboard');
+        //     })
+        //     .catch(err => {
+        //         console.log(err.response);
+        //     });
     }
 })(LogIn);
 
-export default FormikLogin;
+export default connect(
+    null,
+    { userLogin }
+)(FormikLogin);

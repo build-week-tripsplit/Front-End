@@ -9,14 +9,14 @@ const SignUpForm = ({ errors, touched, status }) => {
             <h2>Let's Get Started</h2>
             <Form>
                 <div className="form-input name">
-                    <label htmlFor="fName">First Name: </label>
-                    <Field type="text" name="fName" placeholder="First Name" />
-                    {touched.fName && errors.fName && <p>{errors.fName}</p>}
+                    <label htmlFor="firstName">First Name: </label>
+                    <Field type="text" name="firstName" placeholder="First Name" />
+                    {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}
                 </div>
                 <div className="form-input name">
-                    <label htmlFor="lName">Last Name: </label>
-                    <Field type="text" name="lName" placeholder="Last Name" />
-                    {touched.lName && errors.lName && <p>{errors.lName}</p>}
+                    <label htmlFor="lastName">Last Name: </label>
+                    <Field type="text" name="lastName" placeholder="Last Name" />
+                    {touched.lastName && errors.lastName && <p>{errors.lastName}</p>}
                 </div>
                 <div className="form-input">
                     <label htmlFor="email">Email Address: </label>
@@ -30,7 +30,7 @@ const SignUpForm = ({ errors, touched, status }) => {
                 </div>
                 <div className="form-input">
                     <label htmlFor="password">Password: </label>
-                    <Field type="text" name="password" placeholder="Password" />
+                    <Field type="password" name="password" placeholder="Password" />
                     {touched.password && errors.password && <p>{errors.password}</p>}
                 </div>
                 <button type="submit">Sign Up</button>
@@ -40,10 +40,10 @@ const SignUpForm = ({ errors, touched, status }) => {
 };
 
 const FormikSignUpForm = withFormik({
-    mapsPropsToValues({ fName, lName, email, username, password }) {
+    mapsPropsToValues({ firstName, lastName, email, username, password }) {
         return {
-            first_name: fName || '',
-            last_name: lName || '',
+            firstName: firstName || '',
+            lastName: lastName || '',
             email: email || '',
             username: username || '',
             password: password || ''
@@ -51,8 +51,8 @@ const FormikSignUpForm = withFormik({
     },
 
     validationSchema: Yup.object().shape({
-        fName: Yup.string().required('First Name Required'),
-        lName: Yup.string().required('Last Name Required'),
+        firstName: Yup.string().required('First Name Required'),
+        lastName: Yup.string().required('Last Name Required'),
         email: Yup.string()
             .email('Email not valid')
             .required('Email Required'),
@@ -63,8 +63,15 @@ const FormikSignUpForm = withFormik({
     }),
 
     handleSubmit(values, { props }) {
+        const register = {
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            username: values.username,
+            password: values.password
+        };
         axios
-            .post('https://tripsplit-backend.herokuapp.com/api/auth/register', JSON.stringify(values))
+            .post('https://tripsplit-backend.herokuapp.com/api/auth/register', register)
             .then(res => {
                 console.log(res);
                 props.history.push('/login');

@@ -9,7 +9,10 @@ import { getExpenses } from '../actions/getExpenses';
 const Dashboard = props => {
     useEffect(() => {
         console.log('useEffect inside Dashboard was called');
-        props.getExpenses();
+        console.log('The user props are:', props);
+        const theUserId = localStorage.getItem('userID');
+        console.log('The user id is', theUserId);
+        props.getExpenses(theUserId);
     }, []);
 
     return (
@@ -21,7 +24,14 @@ const Dashboard = props => {
     );
 };
 
+const mapStateToProps = state => {
+    return {
+        user: state.user.userData,
+        expenses: state.expenses.allExpenses
+    };
+};
+
 export default connect(
-    null,
+    mapStateToProps,
     { getExpenses }
 )(Dashboard);
