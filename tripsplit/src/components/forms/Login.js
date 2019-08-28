@@ -17,7 +17,7 @@ function LogIn({ touched, errors }) {
             type="text"
             placeholder="Username"
           ></Field>
-          {touched.username && errors.username && alert(errors.username)}
+          {touched.username && errors.username && <p>{errors.username}</p>}
 
           <Field
             className="field-item"
@@ -25,7 +25,7 @@ function LogIn({ touched, errors }) {
             type="password"
             placeholder="Password"
           ></Field>
-          {touched.password && errors.password && alert(errors.password)}
+          {touched.password && errors.password && <p>{errors.password}</p>}
 
           <button className="button-style-main" type="submit">
             Log-In
