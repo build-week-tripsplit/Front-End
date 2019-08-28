@@ -10,14 +10,18 @@ function LogIn({touched, errors}) {
     const [login, setLogIn] = useState();    
     
     return (
-        <div>
+        <div className="login-form">
+            <h3>
             Welcome back
-            
+            </h3>
+
             <Form>
+              <div className="login-fields">
                 <Field
                 name="username"
                 type="text"
-                placeholder="Username"></Field>
+                placeholder="Username"
+                className="field-item"></Field>
                 {touched.username && errors.username && (
                     alert(errors.username)
                 )}
@@ -25,13 +29,16 @@ function LogIn({touched, errors}) {
                 <Field 
                 name="password"
                 type="text"
-                placeholder="Password"></Field>
+                placeholder="Password"
+                className="field-item"></Field>
                 {touched.password && errors.password && (
                     alert(errors.password)
                 )}
 
-                <button type="submit">
-                    Log-In
+                </div>
+
+                <button className="login-button" type="submit">
+                    Sign In
                 </button>
             </Form>
         </div>
