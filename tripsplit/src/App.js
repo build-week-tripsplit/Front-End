@@ -1,71 +1,47 @@
-// import TripForm from "./components/forms/TripForm";
-import React from 'react';
+import React from "react";
+import { Route, Switch } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
-import SignUp from './components/forms/Signup';
-import Login from './components/forms/Login';
+import SignUp from "./components/forms/Signup";
+import Login from "./components/forms/Login";
 import LandingPage from './components/LandingPage';
-import Dashboard from './components/Dashboard';
-import TripListContainer from './components/TripListContainer';
-import CreateTrip from './components/CreateTrip';
-import IndividualTrip from './components/IndividualTripContainer';
+import Dashboard from "./components/Dashboard";
+import Login from "./components/forms/Login";
+import SignUp from "./components/forms/Signup";
+import IndividualTrip from "./components/IndividualTripContainer";
+import LandingPage from "./components/LandingPage";
+import TripListContainer from "./components/TripListContainer";
 import CreateExpense from './components/CreateExpense';
-import { Route, Switch } from 'react-router-dom';
+import CreateTrip from './components/CreateTrip';
+
+
 
 function App() {
-    // const submitUser = user => {
 
-    //   axios
-    //     .post('http://localhost:5000/api/login', user)
-    //     .then(rez => {
-    //       localStorage.setItem('token', rez.data.payload)
-    //       props.history.push('/users')
-    //     })
-    //     .catch(rez => console.error(rez))
+  return (
+    <div className="App">
+                <Switch>
 
-    // }
-    // const grabExpenzeee = _ => {
-    //   withAxiosos()
-    //     .get("http://localhost:5000/api/")
-    //     .then(res => setList(res.data))
-    //     .catch(err => console.error(err));
-    // };
-
-    // const addTripz = trip => {
-    //   withAxiosos()
-    //     .post("http://localhost:5000/api/trips", trip)
-    //     .then(rez => setList(rez.data))
-    //     .catch(err => console.error(err));
-    // };
-
-    // const updateTripz = trip => {
-    //   withAxiosos()
-    //     .put(`http://localhost:5000/api/trips/${trip.id}`, trip)
-    //     .then(res => setList(res.data))
-    //     .catch(err => console.error(err));
-    // };
-
-    // const delTripz = id => {
-    //   withAxiosos()
-    //     .delete(`http://localhost:5000/api/trips/${id}`)
-    //     .then(rez => setList(rez.data))
-    //     .catch(err => console.error(err));
-    // };
-
-    return (
-        <div className="App">
-            <Switch>
-                <Route exact path="/" component={LandingPage} />
-                <Route path="/login" render={props => <Login {...props} />} />
-                <Route path="/register" render={props => <SignUp {...props} />} />
-                <Route path="/dashboard" component={Dashboard} />
-                <Route path="/triplist" component={TripListContainer} />
-                <Route path="/createTrip" component={CreateTrip} />
-                <Route path="/triplist/:id" component={IndividualTrip} />
-                <Route path="/expenseform" component={CreateExpense} />
+      <Route exact path='/' render={() => <LandingPage />} />
+      <Route path="/login" render={props => <Login {...props} />} />
+      <Route path="/register" render={props => <SignUp {...props} />} />
+      <Route path="/dashboard" render={() => <Dashboard />} />
+      <Route exact path="/triplist" render={() => <TripListContainer />} />
+      <Route path="/createTrip" render={() => <CreateTrip />} />
+      <Route path="/triplist/:id" render={(props) => <IndividualTrip {...props} />} />
+      <Route path="/expenseform" render={() => <CreateExpense />} />
             </Switch>
-        </div>
-    );
+
+    </div>
+  );
+
 }
 
 export default App;
+
+
+
+
+
+
+

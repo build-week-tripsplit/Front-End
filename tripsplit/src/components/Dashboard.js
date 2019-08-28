@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Header from './header/Header';
 import NavBar from './header/NavBar';
+import ExpenseList from "./ExpensesList";
 
 import { getExpenses } from '../actions/getExpenses';
 
@@ -15,11 +16,12 @@ const Dashboard = props => {
         props.getExpenses(theUserId);
     }, []);
 
+
     return (
         <>
             <Header />
             <NavBar />
-            {/* Expense List Component Here */}
+            <ExpenseList />
         </>
     );
 };

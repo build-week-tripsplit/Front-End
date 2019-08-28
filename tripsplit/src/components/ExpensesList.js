@@ -1,63 +1,41 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Expense from './Expense';
-import mockData from './mockdata_todelete';
 import axios from 'axios';
 
-const ExpensesList = props => {
-    const [expenses, setExpenses] = useState([]);
+const ExpensesList = () => {
+  const [expenses, setExpenses] = useState([]);
+  const [totalCost, setTotalCost] = useState(0);
 
-    useEffect(() =>  {
-        axios
-          .get(/* "https://reqres.in/api/users" */)  //TO DO-- add the API endpoint to access user expense data.
-          .then(res => {
-            console.log(res);
-            setExpenses(res);
-          })
-          .catch(err => {
-            console.log(err.response);
-          });
-      }, []);
+  useEffect(() => {
+    axios
+      .get(`https://tripsplit-backend.herokuapp.com/api/expenses`)  //TO DO-- change API endpoint to access user expense data.
+      .then(res => {
+        let filteredExpenses = (res.data.filter(expense => expense.user_id === 1)); //change user_id so it isn't hardcoded
+        setExpenses(filteredExpenses);
+        return filteredExpenses;
+      })
+      .then(res => {
+        let expenseAmounts = res.map(item => item.amount);
+        setTotalCost(expenseAmounts.reduce(((acc, curr) => acc + curr), 0))
+      })
+      .catch(error => {
+        console.log("Error: ExpenseList: ", error);
+      });
 
-      const calcTotal = props => {
-        let expenseTotal = 0;
+  }, []);
 
-        mockData.forEach(item => {
-          
-          expenseTotal = expenseTotal + item.amount;
-        })
-        console.log(expenseTotal);
-        return expenseTotal;
-      }
-      const userTotal = calcTotal();
-      // console.log('expenseTotal is: ' + calcTotal)
-
-
-
-    return (
+  return (
 
     <div className="expenses-list">
       <div className="expenses-summary">
-      <h2>Your Summary: ${userTotal} spent.</h2>
+        <h2>Your Summary: ${totalCost} spent.</h2>
       </div>
-        
-        {/* {console.log('calcTotal is: ' + calcTotal)} */}
+      <h2>My Purchases</h2>
 
-    <h2>My Purchases</h2>
-
-    {mockData.map(item => {
-    // Map function that takes the user's Expense data, cycles through each Expense, and return an Expense (card) component for each one.
-        return (
-        <Expense
-            key={item.id}
-            title={item.title}
-            amount={item.amount}
-            />
-            )}
-        )
-    }
+      {expenses.map(item => <Expense key={item.id} expense={item} />)}
 
     </div>
-    )
+  )
 }
 
 export default ExpensesList;
