@@ -5,23 +5,25 @@ import * as Yup from 'yup';
 import { userLogin } from '../../actions/userLogin';
 // import {Route} from '';
 
-
 function LogIn({ touched, errors }) {
     return (
-        <div>
-            Welcome back
-            <Form>
-                <Field name="username" type="text" placeholder="Username"></Field>
-                {touched.username && errors.username && alert(errors.username)}
+        <div className="login-form">
+            <h3>Welcome back</h3>
+            <div className="login-fields">
+                <Form>
+                    <Field className="field-item" name="username" type="text" placeholder="Username"></Field>
+                    {touched.username && errors.username && errors.username}
 
-                <Field name="password" type="password" placeholder="Password"></Field>
-                {touched.password && errors.password && alert(errors.password)}
+                    <Field className="field-item" name="password" type="password" placeholder="Password"></Field>
+                    {touched.password && errors.password && errors.password}
 
-                <button type="submit">Log-In</button>
-            </Form>
+                    <button className="button-style-main" type="submit">
+                        Log-In
+                    </button>
+                </Form>
+            </div>
         </div>
     );
-
 }
 
 const FormikLogin = withFormik({

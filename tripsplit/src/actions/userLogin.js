@@ -10,9 +10,9 @@ export const userLogin = (history, values) => {
         axize()
             .post('https://tripsplit2.herokuapp.com/api/auth/login', values)
             .then(res => {
-                console.log(res);
+                console.log('userLogin.js action:', res);
                 localStorage.setItem('token', res.data.token);
-                localStorage.setItem('userID', res.data.user_id);
+                localStorage.setItem('userData', JSON.stringify(res.data));
                 dispatch({ type: LOGIN_SUCCESS, payload: res.data });
                 history.push('/dashboard');
             })
