@@ -1,8 +1,8 @@
-import { Field, Form, withFormik } from "formik";
-import React from "react";
-import { connect } from "react-redux";
-import * as Yup from "yup";
-import { userLogin } from "../../actions/userLogin";
+import { Field, Form, withFormik } from 'formik';
+import React from 'react';
+import { connect } from 'react-redux';
+import * as Yup from 'yup';
+import { userLogin } from '../../actions/userLogin';
 // import {Route} from '';
 
 function LogIn({ touched, errors }) {
@@ -11,25 +11,15 @@ function LogIn({ touched, errors }) {
       <h3>Welcome back</h3>
       <div className="login-fields">
         <Form>
-          <Field
-            className="field-item"
-            name="username"
-            type="text"
-            placeholder="Username"
-          ></Field>
-          {touched.username && errors.username && <p>{errors.username}</p>}
+          <Field className="field-item" name="username" type="text" placeholder="Username"></Field>
+          {touched.username && errors.username && errors.username}
 
-          <Field
-            className="field-item"
-            name="password"
-            type="password"
-            placeholder="Password"
-          ></Field>
-          {touched.password && errors.password && <p>{errors.password}</p>}
+          <Field className="field-item" name="password" type="password" placeholder="Password"></Field>
+          {touched.password && errors.password && errors.password}
 
           <button className="button-style-main" type="submit">
             Log-In
-          </button>
+                    </button>
         </Form>
       </div>
     </div>
@@ -39,16 +29,16 @@ function LogIn({ touched, errors }) {
 const FormikLogin = withFormik({
   mapPropsToValues({ username, password }) {
     return {
-      username: username || "",
-      password: password || ""
+      username: username || '',
+      password: password || ''
     };
   },
 
   validationSchema: Yup.object().shape({
-    username: Yup.string().required("Please enter your name."),
+    username: Yup.string().required('Please enter your name.'),
     password: Yup.string()
-      .min(8, "Password should be a minimum of 8 characters.")
-      .required("Please enter your password.")
+      .min(8, 'Password should be a minimum of 8 characters.')
+      .required('Please enter your password.')
   }),
 
   handleSubmit(values, { props }) {

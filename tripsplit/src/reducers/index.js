@@ -5,8 +5,8 @@ import expensesReducer from './expensesReducer';
 
 const rootReducer = combineReducers({
     user: userReducer,
-    trips: tripsReducer,
-    expenses: expensesReducer
+    expenses: expensesReducer,
+    trips: tripsReducer
 });
 
 export default rootReducer;
