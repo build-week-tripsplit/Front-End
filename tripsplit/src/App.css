@@ -32,23 +32,4 @@
   }
 }
 
-.tripForm {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 150px;
-}
 
-.tripFriends {
-  display: flex;
-  flex-direction: row;
-}
-
-.addFriendButton {
-  margin: 10px;
-}
-
-label {
-  display: flex;
-  flex-direction: row;
-}
