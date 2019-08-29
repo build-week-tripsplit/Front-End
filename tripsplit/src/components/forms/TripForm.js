@@ -45,12 +45,15 @@ const TripForm = () => {
         setFields(values);
     }
     return (
-        <>
+        <div className="tripForm-container">
+            <h3>Edit Trip Details</h3>
             <form className="tripForm">
                 <input type="text" name="title" placeholder="Trip Name" value={state.title} onChange={handleChanges} />
                 <input type="text" name="description" placeholder="Trip description" value={state.description} onChange={handleChanges} />
                 <input type="text" name="location" placeholder="Trip location" value={state.location} onChange={handleChanges} />
+                <label>Start Date</label>
                 <input type="date" name="startDate" placeholder="Start Date" value={state.startDate} onChange={handleChanges} />
+                <label>End Date</label>
                 <input type="date" name="endDate" placeholder="EndDate" value={state.endDate} onChange={handleChanges} />
                 <button className="addFriendButton" type="button" onClick={() => handleAdd()}>
                     + Add Friend
@@ -64,15 +67,15 @@ const TripForm = () => {
                                     return <option value={item.username}>{item.username}</option>;
                                 })}
                             </select>
-                            <button type="button" onClick={() => handleRemove(idx)}>
+                            <button className="remove-friend" type="button" onClick={() => handleRemove(idx)}>
                                 X
                             </button>
                         </div>
                     );
                 })}
-                <button onClick={handleSubmit}>Submit</button>
+                <button className="button-style-main" onClick={handleSubmit}>Submit</button>
             </form>
-        </>
+        </div>
     );
 };
 

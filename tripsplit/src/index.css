@@ -41,6 +41,19 @@ code {
     monospace;
 }
 
+/*GLOBAL STYLES*/
+
+.logo {
+  display: block;
+  max-width: 130px;
+  max-height: 110px;
+  padding-left: 5%;
+  width: auto;
+  height: auto;
+}
+
+
+/* LANDING PAGE & SIGN-UP & LOG-IN */
 
 .login-form {
   width: 35%;
@@ -174,6 +187,8 @@ h3 {
   background-color: #6DA4F8;
 }
 
+/* LANDING PAGE */
+
 .landing-page {
   width: 100%;
   height: 100%;
@@ -183,10 +198,14 @@ h3 {
   /* margin-top: 20px; */
 }
 
-.landing-div h1 {
-  font-size: 48px;
+h1 {
+  font-size: 65px !important;
   font-family: "Roboto Bold", 'sans-serif';
   color: #6DA4F8;
+}
+
+.header-h1 {
+  padding-right: 5%;
 }
 
 .landing-div h4,p {
@@ -221,26 +240,26 @@ h3 {
 }
 
 
+
+
+/* EXPENSES PAGES */
+
 .expenses-list {
-  background: #E3E5E8;
+  background: white;
   margin: 10px 0;
   margin-bottom: 20px;
 }
 
 .expenses-summary {
-  background: #E3E5E8;
-  border: 1px solid black;
-  margin: 10px 0;
+  background: white;
+  /* margin: 10px 0; */
+  align-items: center;
   display: flex;
-  justify-content: flex-start;
-}
-
-.expenses-summary h2 {
-  padding-left: 30px;
+  justify-content: space-between;
 }
 
 .expense {
-  background: white;
+  background: #EBE9E7;
   border: 1px solid black;
   border-radius: 3px;
   box-shadow: .5px 1px;
@@ -257,4 +276,73 @@ h3 {
 .expense p {
   color: red;
   padding-right: 10%;
+}
+
+
+/* DASHBOARD */
+
+.expenses-list div {
+  display: flex;
+  padding-left: 5%;
+} 
+
+.expenses-sum {
+  margin: 0px 0 !important;
+  padding-right: 5%;
+  color: red;
+}
+
+.expenses-summary {
+  margin: 20px 0;
+}
+
+.expenses-summary h2 {
+  margin: 0 0 !important; 
+}
+
+
+/* TRIP FORM */
+
+.tripForm-container {
+  margin-top: 8%;
+}
+
+.tripForm {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 40%;
+}
+
+.tripForm input {
+  margin-top: 15px;
+}
+
+.tripForm label {
+  margin-top: 12px;
+  margin-bottom: -10px;
+  color: #5C6070
+}
+
+.tripFriends {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.tripFriends select {
+  height: 25px;
+  margin-right: 5px;
+}
+
+.addFriendButton {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+label {
+  display: flex;
+  flex-direction: row;
 }
