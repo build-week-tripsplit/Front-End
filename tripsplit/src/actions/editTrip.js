@@ -4,11 +4,11 @@ export const EDIT_TRIP_START = 'EDIT_TRIP_START';
 export const EDIT_TRIP_SUCCESS = 'EDIT_TRIP_SUCCESS';
 export const EDIT_TRIP_FAILURE = 'EDIT_TRIP_FAILURE';
 
-export const addTrips = (history, tripId, tripData) => {
+export const editTrip = (history, tripId, tripData) => {
     return dispatch => {
         dispatch({ type: EDIT_TRIP_START });
         axize()
-            .post(`https://tripsplit2.herokuapp.com/api/trips/${tripId}`, tripData)
+            .post(`https://tripsplit-backend.herokuapp.com/api/trips/${tripId}`, tripData)
             .then(res => {
                 console.log(res);
                 dispatch({ type: EDIT_TRIP_SUCCESS, payload: { tripId: tripId, tripData: res.data } });

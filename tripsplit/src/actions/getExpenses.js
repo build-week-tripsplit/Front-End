@@ -9,7 +9,7 @@ export const getExpenses = () => {
     return dispatch => {
         dispatch({ type: GET_EXPENSES_START });
         axize()
-            .get(`https://tripsplit2.herokuapp.com/api/expenses/user/${userId}`)
+            .get(`https://tripsplit-backend.herokuapp.com/api/expenses/user/${userId}`)
             .then(res => {
                 console.log('getExpenses.js action', res);
                 let expenseAmounts = res.data.map(item => item.amount);
