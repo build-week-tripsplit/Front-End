@@ -8,7 +8,7 @@ export const addExpense = expenseData => {
     return dispatch => {
         dispatch({ type: ADD_EXPENSE_START });
         axize()
-            .post('https://tripsplit2.herokuapp.com/api/expenses', expenseData)
+            .post('https://tripsplit-backend.herokuapp.com/api/expenses', expenseData)
             .then(res => {
                 console.log(res);
                 dispatch({ type: ADD_EXPENSE_SUCCESS, payload: res.data });

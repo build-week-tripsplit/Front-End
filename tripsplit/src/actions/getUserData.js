@@ -8,7 +8,7 @@ export const getUserData = userId => {
     return dispatch => {
         dispatch({ type: GET_USER_DATA_START });
         axize()
-            .get(`https://tripsplit2.herokuapp.com/api/users/${userId}`)
+            .get(`https://tripsplit-backend.herokuapp.com/api/users/${userId}`)
             .then(res => {
                 console.log('getUserData.js action:', res);
                 dispatch({ type: GET_USER_DATA_SUCCESS, payload: res.data });

@@ -8,7 +8,7 @@ export const addTrips = tripData => {
     return dispatch => {
         dispatch({ type: ADD_TRIP_START });
         axize()
-            .post('https://tripsplit2.herokuapp.com/api/trips', tripData)
+            .post('https://tripsplit-backend.herokuapp.com/api/trips', tripData)
             .then(res => {
                 console.log(res);
                 dispatch({ type: ADD_TRIP_SUCCESS, payload: res.data });

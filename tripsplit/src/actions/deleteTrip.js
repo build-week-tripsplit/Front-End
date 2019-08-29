@@ -8,7 +8,7 @@ export const deleteTrip = (history, tripId) => {
     return dispatch => {
         dispatch({ type: DELETE_TRIP_START });
         axios
-            .delete(`https://tripsplit2.herokuapp.com/api/trips/${tripId}`)
+            .delete(`https://tripsplit-backend.herokuapp.com/api/trips/${tripId}`)
             .then(res => {
                 console.log('deleteTrip.js action', res);
                 dispatch({ type: DELETE_TRIP_SUCCESS, payload: tripId });

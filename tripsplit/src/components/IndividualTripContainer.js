@@ -17,13 +17,13 @@ const IndividualTrip = props => {
 
     useEffect(() => {
         axios
-            .get(`https://tripsplit2.herokuapp.com/api/trips/${id}`)
+            .get(`https://tripsplit-backend.herokuapp.com/api/trips/${id}`)
             .then(response => setTrip(response.data))
             .catch(error => console.log('Error: IndividualTripContainer.js: TripGet: ', error));
 
         //Change endpoint to grab user specific expsenses. Or user & trip specific expenses
         axios
-            .get(`https://tripsplit2.herokuapp.com/api/expenses`)
+            .get(`https://tripsplit-backend.herokuapp.com/api/expenses`)
             .then(response => {
                 let filteredExpenses = response.data.filter(expense => expense.trip_id === Number(id));
                 setTripExpenses(filteredExpenses);

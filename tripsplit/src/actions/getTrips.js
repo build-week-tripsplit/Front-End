@@ -9,7 +9,7 @@ export const getTrips = () => {
     return dispatch => {
         dispatch({ type: GET_TRIPS_START });
         axios
-            .get(`https://tripsplit2.herokuapp.com/api/trips/user/${userId}`)
+            .get(`https://tripsplit-backend.herokuapp.com/api/trips/user/${userId}`)
             .then(res => {
                 console.log(res);
                 dispatch({ type: GET_TRIPS_SUCCESS, payload: res.data });

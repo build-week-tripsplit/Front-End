@@ -8,7 +8,7 @@ export const deleteExpense = expense => {
     return dispatch => {
         dispatch({ type: DELETE_EXPENSE_START });
         axios
-            .delete(`https://tripsplit2.herokuapp.com/api/expenses/${expense.id}`)
+            .delete(`https://tripsplit-backend.herokuapp.com/api/expenses/${expense.id}`)
             .then(res => {
                 console.log('deleteExpense.js action', res);
                 dispatch({ type: DELETE_EXPENSE_SUCCESS, payload: { expenseId: expense.id, amount: expense.amount } });
