@@ -8,7 +8,7 @@ export const userLogin = (history, values) => {
     return dispatch => {
         dispatch({ type: LOGIN_START });
         axize()
-            .post('https://tripsplit2.herokuapp.com/api/auth/login', values)
+            .post('https://tripsplit-backend.herokuapp.com/api/auth/login', values)
             .then(res => {
                 console.log('userLogin.js action:', res);
                 localStorage.setItem('token', res.data.token);

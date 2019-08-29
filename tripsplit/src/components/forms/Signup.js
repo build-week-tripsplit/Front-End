@@ -83,7 +83,7 @@ const FormikSignUpForm = withFormik({
             password: values.password
         };
         axios
-            .post('https://tripsplit2.herokuapp.com/api/auth/register', register)
+            .post('https://tripsplit-backend.herokuapp.com/api/auth/register', register)
             .then(res => {
                 console.log(res);
                 props.history.push('/login');
