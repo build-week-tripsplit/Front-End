@@ -8,9 +8,6 @@ const StyledDiv = styled.div`
     left: 0;
     right: 0;
     position: absolute;
-    height: 10%;
-    margin-top: 50px;
-    margin-bottom: 10px;
     align-items: center;
     
     h1{

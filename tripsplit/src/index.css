@@ -301,6 +301,19 @@ h1 {
 }
 
 
+/* TRIP LIST */
+
+.trips {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.trip {
+
+}
+
+
 /* TRIP FORM */
 
 .tripForm-container {
@@ -339,6 +352,10 @@ h1 {
 .addFriendButton {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.edit-trip {
+  margin: 20px auto;
 }
 
 

@@ -73,7 +73,7 @@ const TripForm = () => {
                         </div>
                     );
                 })}
-                <button className="button-style-main" onClick={handleSubmit}>Submit</button>
+                <button className="button-style-main edit-trip" onClick={handleSubmit}>Submit</button>
             </form>
         </div>
     );
