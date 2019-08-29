@@ -3,6 +3,19 @@ import React, { useState } from "react";
 const TripForm = () => {
   const [state, setState] = useState({});
   const [fields, setFields] = useState([{ value: null }]);
+  const [myFriends, setMyFirends] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`https://tripsplit-backend.herokuapp.com/api/users`)
+      .then(res => {
+        let users = res.data;
+        setAllUsers(users);
+      })
+      .catch(error => {
+        console.log("Error: TripForm: ", error);
+      });
+  }, []);
 
   console.log("fields", fields);
   function handleSubmit(e) {
@@ -79,11 +92,11 @@ const TripForm = () => {
         {fields.map((field, idx) => {
           return (
             <div className="tripFriends" key={`${field}-${idx}`}>
-              <input
-                type="text"
-                placeholder="Enter text"
-                onChange={e => handleChange(idx, e)}
-              />
+              <select name="users-list">
+                {allUsers.map(item => {
+                  <option value={item.username}>{item.username}</option>;
+                })}
+              </select>
               <button type="button" onClick={() => handleRemove(idx)}>
                 X
               </button>
