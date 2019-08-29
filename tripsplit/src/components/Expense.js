@@ -8,7 +8,7 @@ const Expense = ({ expense, deleteExpense }) => {
     return (
         //JSX element displaying a card for every indvidual expense.
         <div className="expense">
-            <h3> {expense.title}</h3>
+            <h3>{expense.title}</h3>
             <p>${expense.amount}</p>
             <button onClick={() => deleteExpense(expense)}>X</button>
         </div>
