@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from './header/Header';
 import NavBar from './header/NavBar';
 import ExpenseList from './ExpensesList';
+import Footer from './header/Footer';
 
 // import { getExpenses } from '../actions/getExpenses';
 // import { getTrips } from '../actions/getTrips';
@@ -19,6 +20,7 @@ const Dashboard = props => {
             <Header />
             <NavBar />
             <ExpenseList />
+            <Footer />
         </>
     );
 };
