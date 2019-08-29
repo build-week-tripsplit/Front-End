@@ -18,11 +18,10 @@ function TripsList({ tripList, getTrips }) {
     useEffect(() => {
         getTrips();
     }, []);
-
     return (
         <div className="trips">
             {tripList.map(trip => (
-                <Link to={`/triplist/${trip.id}`}>
+                <Link to={`/triplist/${trip.trip_id}`}>
                     <Trip key={trip.id} trip={trip} />
                 </Link>
             ))}
