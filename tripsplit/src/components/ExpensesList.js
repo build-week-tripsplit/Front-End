@@ -32,9 +32,15 @@ const ExpensesList = ({ expenses, totalCost, getExpenses }) => {
 
     return (
         <div className="expenses-list">
-            <div className="expenses-summary">
-                <h2>Your Summary: ${totalCost} spent.</h2>
+            <div>
+                <h2>Welcome Back!</h2>
             </div>
+
+            <div className="expenses-summary">
+                <h2>Your Summary</h2>
+                <h2 className="expenses-sum">${totalCost}</h2>
+            </div>
+
             <h2>My Purchases</h2>
 
             {expenses.map(item => (

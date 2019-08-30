@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 const TripForm = () => {
   const [state, setState] = useState({});
   const [fields, setFields] = useState([{ value: null }]);
-  const [myFriends, setMyFirends] = useState([]);
+  const [friends, setFirends] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
   useEffect(() => {
     axios
@@ -29,25 +29,10 @@ const TripForm = () => {
   function handleChanges(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
-  function handleChange() {
-    const values = [fields];
 
-    setFields(values);
-  }
-
-  function handleAdd() {
-    const values = [...fields];
-    values.push();
-    setFields(values);
-  }
-
-  function handleRemove(i) {
-    const values = [...fields];
-    values.splice(i, 1);
-    setFields(values);
-  }
   return (
-    <>
+    <div className="tripForm-container">
+      <h3>Edit Trip Details</h3>
       <form className="tripForm">
         <input
           type="text"
@@ -70,6 +55,7 @@ const TripForm = () => {
           value={state.location}
           onChange={handleChanges}
         />
+        <label>Start Date</label>
         <input
           type="date"
           name="startDate"
@@ -77,6 +63,7 @@ const TripForm = () => {
           value={state.startDate}
           onChange={handleChanges}
         />
+        <label>End Date</label>
         <input
           type="date"
           name="endDate"
@@ -89,16 +76,19 @@ const TripForm = () => {
             <label>
               <input
                 type="checkbox"
-                onChange={() => setFields({ ...fields, value: item.username })}
+                checked={friends}
+                // onChange={handleChange}
                 value={item.username}
               />
               {item.username}
             </label>
           );
         })}
-        <button onClick={handleSubmit}>Submit</button>
+        <button className="button-style-main edit-trip" onClick={handleSubmit}>
+          Submit
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 

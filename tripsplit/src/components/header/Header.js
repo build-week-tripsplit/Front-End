@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const StyledDiv = styled.div`
     display:flex;
-    justify-content:space-around;
+    justify-content: space-between;
     
     h1{
         margin:1% 0%;
@@ -13,8 +13,8 @@ const StyledDiv = styled.div`
 const Header = () => {
     return (
         <StyledDiv>
-            <h1>LOGO</h1>
-            <h1>TripSplit</h1>
+            <img className="logo" src="./../landing_img.jpg" alt="TripSplit Logo"></img>
+            <h1 className="header-h1">TripSplit</h1>
         </StyledDiv>
     )
 }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Trip from './Trip';
 import Axios from 'axios';
+import Footer from "./header/Footer";
 
 import { getTrips } from '../actions/getTrips';
 
@@ -18,14 +19,14 @@ function TripsList({ tripList, getTrips }) {
     useEffect(() => {
         getTrips();
     }, []);
-
     return (
         <div className="trips">
             {tripList.map(trip => (
-                <Link to={`/triplist/${trip.id}`}>
+                <Link to={`/triplist/${trip.trip_id}`}>
                     <Trip key={trip.id} trip={trip} />
                 </Link>
             ))}
+            <Footer />
         </div>
     );
 }

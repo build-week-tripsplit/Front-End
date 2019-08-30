@@ -8,7 +8,7 @@ export const editTrip = (history, tripId, tripData) => {
     return dispatch => {
         dispatch({ type: EDIT_TRIP_START });
         axize()
-            .post(`https://tripsplit-backend.herokuapp.com/api/trips/${tripId}`, tripData)
+            .put(`https://tripsplit-backend.herokuapp.com/api/trips/${tripId}`, tripData)
             .then(res => {
                 console.log(res);
                 dispatch({ type: EDIT_TRIP_SUCCESS, payload: { tripId: tripId, tripData: res.data } });

@@ -14,7 +14,8 @@ const IndividualTrip = props => {
     const [trip, setTrip] = useState({});
     const [tripExpenses, setTripExpenses] = useState([]);
     const [totalCost, setTotalCost] = useState(0);
-
+    const [personalCost, setPersonalCost] = useState(0);
+    const userId = JSON.parse(localStorage.getItem('userData')).user_id;
     useEffect(() => {
         axios
             .get(`https://tripsplit-backend.herokuapp.com/api/trips/${id}`)
@@ -34,16 +35,36 @@ const IndividualTrip = props => {
                 setTotalCost(expenseAmounts.reduce((acc, curr) => acc + curr, 0));
             })
             .catch(error => console.log('Error: IndividualTripContainer.js: ExpenseGet: ', error));
+
+        axios
+            .get(`https://tripsplit-backend.herokuapp.com/api/expenses/user/${userId}`)
+            .then(response => {
+                let filteredExpenses = response.data.filter(expense => expense.trip_id === Number(id));
+                let expenseAmounts = filteredExpenses.map(item => item.amount);
+                setPersonalCost(expenseAmounts.reduce((acc, curr) => acc + curr, 0));
+            })
+            .catch(error => console.log('Error: IndividualTripContainer.js: ExpenseGet: ', error));
     }, [props.totalCost]);
+
+    const handleClose = () => {
+        axios.put(`https://tripsplit-backend.herokuapp.com/api/trips/${id}`, { "complete": true })
+            .then(response => console.log(response))
+            .catch(error => console.log('Error: IndividualTripContainer.js: TripPut: ', error));
+        props.history.push("/triplist");
+    }
+
     return (
         <>
             <Header />
             <NavBar />
             <Trip key={trip.id} trip={trip} />
+            <h4>Trip Status: {trip.complete ? "Closed" : "Open"}</h4>
             <h2>Your Summary: ${totalCost} spent.</h2>
+            <h2>You Paid: ${personalCost}</h2>
             <Link to="/expenseform">
                 <button>Create Expense</button>
             </Link>
+            <button onClick={handleClose}>Close Trip</button>
             {tripExpenses.map(expense => (
                 <Expense expense={expense} />
             ))}
