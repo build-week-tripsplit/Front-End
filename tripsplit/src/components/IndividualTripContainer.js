@@ -6,6 +6,7 @@ import NavBar from './header/NavBar';
 import axios from 'axios';
 import Trip from './Trip';
 import Expense from './Expense';
+import Footer from './header/Footer'
 
 import { deleteTrip } from '../actions/deleteTrip';
 
@@ -71,6 +72,7 @@ const IndividualTrip = props => {
             {tripExpenses.map(expense => (
                 <Expense expense={expense} />
             ))}
+            <Footer className="trip-footer" />
         </>
     );
 };
