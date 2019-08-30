@@ -2,6 +2,8 @@
 
 Instead of scrambling at the end of a trip or a dinner to figure out who pays for what, Trip Split keeps things simple. Everything is divided equally and there’s no more guessing game involved. No need to whip out the calculator on your iPhone after an uber ride and you can plan out trips in advance so you’re always on budget.
 
+**BASE URL** https://tripsplit.now.sh/
+
 ## Tech Stack
 - HTML/CSS
 - React
