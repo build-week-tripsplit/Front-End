@@ -197,7 +197,9 @@ h1 {
 /* EXPENSES PAGES */
 
 .expenses-list {
-  background: white;
+  background: #F7F9FC;
+  box-shadow: 0 0 2px;
+  border-radius: 3px;
   margin: 10px 0;
   margin-bottom: 60px;
 }
@@ -211,9 +213,10 @@ h1 {
 }
 
 .expense {
-  background: #EBE9E7;
-  border: 1px solid black;
+  background: white;
   border-radius: 3px;
+  box-shadow: 0 0 2px;
+  border: 0.1px solid grey;
   box-shadow: .5px 1px;
   margin: 5px 15%;
   display: flex;
@@ -221,13 +224,27 @@ h1 {
   align-items: center;
 }
 
-.expense h3 {
-  padding-left: 10%;
-}
-
 .expense p {
   color: red;
-  padding-right: 10%;
+  padding-top: 14px;
+  text-align: center;
+}
+
+.expense-name-date {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0 !important;
+}
+
+.expense-name-date h3 {
+  margin-bottom: 5px;
+  margin-top: 3px;
+}
+
+.expense-name-date h6 {
+  margin: 0 0;
 }
 
 
@@ -262,6 +279,7 @@ h1 {
 
 .trips {
   margin-top: 5%;
+  margin-left: 5%;
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
