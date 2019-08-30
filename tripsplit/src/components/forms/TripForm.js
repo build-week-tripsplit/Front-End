@@ -69,14 +69,16 @@ const TripForm = ({ addTrip, history }) => {
                 <input type="date" name="startDate" placeholder="Start Date" value={state.startDate} onChange={handleChanges} />
                 <label>End Date</label>
                 <input type="date" name="endDate" placeholder="EndDate" value={state.endDate} onChange={handleChanges} />
-                {allUsers.map(item => {
-                    return (
-                        <label>
-                            <input type="checkbox" onChange={handleChecked} value={item.id} />
-                            {item.username}
-                        </label>
-                    );
-                })}
+                <div className="friend-list">
+                    {allUsers.map(item => {
+                        return (
+                            <label>
+                                <input type="checkbox" onChange={handleChecked} value={item.id} />
+                                {item.username}
+                            </label>
+                        );
+                    })}
+                </div>
                 <button className="button-style-main edit-trip" onClick={handleSubmit}>
                     Submit
                 </button>
