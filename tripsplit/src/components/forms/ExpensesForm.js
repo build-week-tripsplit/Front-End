@@ -52,18 +52,20 @@ const ExpensesForm = ({ tripId, addExpense, history }) => {
 
     return (
         <div className="tripForm-container">
-            <h3>Edit Trip Details</h3>
+            <h3>Create Expenses</h3>
             <form className="tripForm">
                 <input type="text" name="title" placeholder="Expense Name" value={state.title} onChange={handleChanges} />
                 <input type="number" name="amount" placeholder="Expense Amount" value={state.amount} onChange={handleChanges} />
-                {allUsers.map(item => {
-                    return (
-                        <label>
-                            <input type="checkbox" onChange={handleChecked} value={item.id} />
-                            {item.username}
-                        </label>
-                    );
-                })}
+                <div className="friend-list">
+                    {allUsers.map(item => {
+                        return (
+                            <label>
+                                <input type="checkbox" onChange={handleChecked} value={item.id} />
+                                {item.username}
+                            </label>
+                        );
+                    })}
+                </div>
                 <button className="button-style-main edit-trip" onClick={handleSubmit}>
                     Submit
                 </button>
