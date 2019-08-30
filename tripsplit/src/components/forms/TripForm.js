@@ -21,21 +21,23 @@ const TripForm = () => {
   console.log("fields", fields);
   function handleSubmit(e) {
     e.preventDefault();
+    // setFields();
     setState({ ...state, fields, state });
+    console.log("fields", fields);
   }
   console.log("state", state);
   function handleChanges(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
-  function handleChange(i, event) {
-    const values = [...fields];
-    values[i].value = event.target.value;
+  function handleChange() {
+    const values = [fields];
+
     setFields(values);
   }
 
   function handleAdd() {
     const values = [...fields];
-    values.push({ value: null });
+    values.push();
     setFields(values);
   }
 
@@ -82,26 +84,16 @@ const TripForm = () => {
           value={state.endDate}
           onChange={handleChanges}
         />
-        <button
-          className="addFriendButton"
-          type="button"
-          onClick={() => handleAdd()}
-        >
-          + Add Friend
-        </button>
-
-        {fields.map((field, idx) => {
+        {allUsers.map(item => {
           return (
-            <div className="tripFriends" key={`${field}-${idx}`}>
-              <select name="users-list">
-                {allUsers.map(item => {
-                  <option value={item.username}>{item.username}</option>;
-                })}
-              </select>
-              <button type="button" onClick={() => handleRemove(idx)}>
-                X
-              </button>
-            </div>
+            <label>
+              <input
+                type="checkbox"
+                onChange={() => setFields({ ...fields, value: item.username })}
+                value={item.username}
+              />
+              {item.username}
+            </label>
           );
         })}
         <button onClick={handleSubmit}>Submit</button>
