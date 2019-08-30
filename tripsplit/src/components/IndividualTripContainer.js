@@ -47,21 +47,22 @@ const IndividualTrip = props => {
     }, [props.totalCost]);
 
     const handleClose = () => {
-        axios.put(`https://tripsplit-backend.herokuapp.com/api/trips/${id}`, { "complete": true })
+        axios
+            .put(`https://tripsplit-backend.herokuapp.com/api/trips/${id}`, { complete: true })
             .then(response => console.log(response))
             .catch(error => console.log('Error: IndividualTripContainer.js: TripPut: ', error));
-        props.history.push("/triplist");
-    }
+        props.history.push('/triplist');
+    };
 
     return (
         <>
             <Header />
             <NavBar />
             <Trip key={trip.id} trip={trip} />
-            <h4>Trip Status: {trip.complete ? "Closed" : "Open"}</h4>
+            <h4>Trip Status: {trip.complete ? 'Closed' : 'Open'}</h4>
             <h2>Your Summary: ${totalCost} spent.</h2>
             <h2>You Paid: ${personalCost}</h2>
-            <Link to="/expenseform">
+            <Link to={`/expenseform/${id}`}>
                 <button>Create Expense</button>
             </Link>
             <button onClick={handleClose}>Close Trip</button>
