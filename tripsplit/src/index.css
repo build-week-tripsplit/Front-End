@@ -247,7 +247,7 @@ h1 {
 .expenses-list {
   background: white;
   margin: 10px 0;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 
 .expenses-summary {
@@ -300,6 +300,11 @@ h1 {
   margin: 0 0 !important; 
 }
 
+.delete-expense {
+  margin-right: 5%;
+  width: 30px;
+}
+
 
 /* TRIP LIST */
 
@@ -307,17 +312,24 @@ h1 {
   margin-top: 5%;
   display: flex;
   justify-content: space-evenly;
+  flex-flow: row wrap;
 }
 
-.trip {
-
+.trip-card {
+  min-width: 33%;
+  max-width: 70%;
+  margin: 10px 0;
 }
 
+.ui .card {
+  width: 100%;
+}
 
 /* TRIP FORM */
 
 .tripForm-container {
   margin-top: 8%;
+  margin-bottom: 30px;
 }
 
 .tripForm {

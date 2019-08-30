@@ -22,7 +22,7 @@ function TripsList({ tripList, getTrips }) {
     return (
         <div className="trips">
             {tripList.map(trip => (
-                <Link to={`/triplist/${trip.trip_id}`}>
+                <Link className="trip-card" to={`/triplist/${trip.trip_id}`}>
                     <Trip key={trip.id} trip={trip} />
                 </Link>
             ))}
