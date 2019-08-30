@@ -39,7 +39,8 @@ const ExpensesForm = () => {
   // amount: 2500,
   // date: 1561248000,
   return (
-    <>
+    <div className="expenses-form-container">
+      <h3>Expense Details</h3> 
       <form className="expenses-form">
         <input
           type="text"
@@ -62,6 +63,9 @@ const ExpensesForm = () => {
           value={state.amount}
           onChange={handleChanges}
         />
+
+        <label>Date</label>
+        
         <input
           type="date"
           name="sDate"
@@ -70,7 +74,8 @@ const ExpensesForm = () => {
           onChange={handleChanges}
         />
         <button
-          className="addFriendButton"
+          className="addFriendButton button-style-main
+          "
           type="button"
           onClick={() => handleAdd()}
         >
@@ -85,15 +90,17 @@ const ExpensesForm = () => {
                 placeholder="Enter text"
                 onChange={e => handleChange(idx, e)}
               />
-              <button type="button" onClick={() => handleRemove(idx)}>
+              <button className="expense-button" type="button" onClick={() => handleRemove(idx)}>
                 X
               </button>
             </div>
           );
         })}
-        <button onClick={handleSubmit}>Submit</button>
+        <button 
+        className="button-style-main"
+        onClick={handleSubmit}>Submit</button>
       </form>
-    </>
+    </div>
   );
 };
 

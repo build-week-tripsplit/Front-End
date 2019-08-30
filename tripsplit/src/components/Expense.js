@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteExpense } from '../actions/deleteExpense';
+import moment from "moment";
 
 const Expense = ({ expense, deleteExpense }) => {
     //Pass in props data from ExpenseList.
@@ -10,7 +11,7 @@ const Expense = ({ expense, deleteExpense }) => {
         <div className="expense">
             <div className="expense-name-date">
             <h3>{expense.title}</h3>
-            <h6>{expense.date}</h6>
+            <h6>{moment(expense.date).format("MMMM Do YYYY")}</h6>
             </div>
 
             <p>${expense.amount}</p>
