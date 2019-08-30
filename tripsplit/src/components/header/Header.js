@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+import { Icon } from "semantic-ui-react"
 
 const StyledDiv = styled.div`
     display:flex;
@@ -13,7 +14,7 @@ const StyledDiv = styled.div`
 const Header = () => {
     return (
         <StyledDiv>
-            <img className="logo" src="./../landing_img.jpg" alt="TripSplit Logo"></img>
+            <Icon name="map" className="icon-logo" size="huge" />
             <h1 className="header-h1">TripSplit</h1>
         </StyledDiv>
     )

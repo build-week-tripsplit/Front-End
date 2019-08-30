@@ -3,25 +3,29 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as Yup from 'yup';
 import { userLogin } from '../../actions/userLogin';
+import Header from "../header/Header";
 // import {Route} from '';
 
 function LogIn({ touched, errors }) {
   return (
-    <div className="login-form">
-      <h3>Welcome back</h3>
-      <div className="login-fields">
-        <Form>
-          <div className="login-input-fields">
-            <Field className="field-item" name="username" type="text" placeholder="Username"></Field>
-            {touched.username && errors.username && errors.username}
+    <>
+      <Header />
+      <div className="login-form">
+        <h3>Welcome back</h3>
+        <div className="login-fields">
+          <Form>
+            <div className="login-input-fields">
+              <Field className="field-item" name="username" type="text" placeholder="Username"></Field>
+              {touched.username && errors.username && errors.username}
 
-            <Field className="field-item" name="password" type="password" placeholder="Password"></Field>
-            {touched.password && errors.password && errors.password}
-          </div>
-          <button className="button-style-main" type="submit">Log-In</button>
-        </Form>
+              <Field className="field-item" name="password" type="password" placeholder="Password"></Field>
+              {touched.password && errors.password && errors.password}
+            </div>
+            <button className="button-style-main login" type="submit">Log-In</button>
+          </Form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
