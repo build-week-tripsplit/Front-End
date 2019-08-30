@@ -272,6 +272,10 @@ h1 {
 .delete-expense {
   margin-right: 5%;
   width: 30px;
+  background:#ffffff;
+  color:black;
+  border:none;
+  cursor:pointer;
 }
 
 
