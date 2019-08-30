@@ -139,6 +139,14 @@ h3 {
   background-color: #6DA4F8;
 }
 
+.button-style-main.trip-button{
+  width:20%;
+}
+
+.side-button{
+  margin: 2% 1%;
+}
+
 /* LANDING PAGE */
 
 .landing-page {

@@ -61,10 +61,13 @@ const IndividualTrip = props => {
             <h4>Trip Status: {trip.complete ? "Closed" : "Open"}</h4>
             <h2>Your Summary: ${totalCost} spent.</h2>
             <h2>You Paid: ${personalCost}</h2>
-            <Link to="/expenseform">
-                <button>Create Expense</button>
-            </Link>
-            <button onClick={handleClose}>Close Trip</button>
+            <div className="button-div">
+                <Link to="/expenseform">
+                    <button className="button-style-main trip-button side-button">Create Expense</button>
+                </Link>
+                <button onClick={handleClose} className="button-style-main trip-button side-button">Close Trip</button>
+            </div>
+
             {tripExpenses.map(expense => (
                 <Expense expense={expense} />
             ))}

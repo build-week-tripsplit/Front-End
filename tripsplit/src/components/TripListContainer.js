@@ -11,7 +11,7 @@ const TripListContainer = () => {
         <>
             <Header />
             <NavBar />
-            <Link to="/createTrip"><button>Create Trip</button></Link>
+            <Link to="/createTrip"><button className="button-style-main trip-button">Create Trip</button></Link>
             <TripList />
         </>
     )
