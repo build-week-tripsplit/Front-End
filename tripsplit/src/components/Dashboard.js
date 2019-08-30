@@ -17,11 +17,16 @@ const Dashboard = props => {
 
     return (
         <>
+        <div>
             <Header />
             <NavBar />
             <ExpenseList />
+        </div>
+        <div>
             <Footer />
+        </div>
         </>
+
     );
 };
 

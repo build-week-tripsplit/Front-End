@@ -10,7 +10,7 @@ const Expense = ({ expense, deleteExpense }) => {
         <div className="expense">
             <h3>{expense.title}</h3>
             <p>${expense.amount}</p>
-            <button onClick={() => deleteExpense(expense)}>X</button>
+            <button className="delete-expense" onClick={() => deleteExpense(expense)}>X</button>
         </div>
     );
 };
