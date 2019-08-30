@@ -139,6 +139,14 @@ h3 {
   background-color: #6DA4F8;
 }
 
+.button-style-main.trip-button{
+  width:20%;
+}
+
+.side-button{
+  margin: 2% 1%;
+}
+
 /* LANDING PAGE */
 
 .landing-page {
@@ -198,7 +206,6 @@ h1 {
 
 .expenses-list {
   background: #F7F9FC;
-  box-shadow: 0 0 2px;
   border-radius: 3px;
   margin: 10px 0;
   margin-bottom: 60px;
@@ -301,6 +308,10 @@ h1 {
 .delete-expense {
   margin-right: 5%;
   width: 30px;
+  background:#ffffff;
+  color:black;
+  border:none;
+  cursor:pointer;
 }
 
 

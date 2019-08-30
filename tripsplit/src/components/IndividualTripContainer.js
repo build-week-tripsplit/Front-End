@@ -6,6 +6,7 @@ import NavBar from './header/NavBar';
 import axios from 'axios';
 import Trip from './Trip';
 import Expense from './Expense';
+import Footer from './header/Footer'
 
 import { deleteTrip } from '../actions/deleteTrip';
 
@@ -63,13 +64,17 @@ const IndividualTrip = props => {
             <h4>Trip Status: {trip.complete ? "Closed" : "Open"}</h4>
             <h2>Your Summary: ${totalCost} spent.</h2>
             <h2>You Paid: ${personalCost}</h2>
-            <Link to="/expenseform">
-                <button>Create Expense</button>
-            </Link>
-            <button onClick={handleClose}>Close Trip</button>
+            <div className="button-div">
+                <Link to="/expenseform">
+                    <button className="button-style-main trip-button side-button">Create Expense</button>
+                </Link>
+                <button onClick={handleClose} className="button-style-main trip-button side-button">Close Trip</button>
+            </div>
+
             {tripExpenses.map(expense => (
                 <Expense expense={expense} />
             ))}
+            <Footer className="trip-footer" />
         </>
     );
 };

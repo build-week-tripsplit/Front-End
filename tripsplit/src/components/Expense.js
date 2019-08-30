@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteExpense } from '../actions/deleteExpense';
+import { Icon } from "semantic-ui-react"
 import moment from "moment";
+
 
 const Expense = ({ expense, deleteExpense }) => {
     //Pass in props data from ExpenseList.
@@ -15,7 +17,7 @@ const Expense = ({ expense, deleteExpense }) => {
             </div>
 
             <p>${expense.amount}</p>
-            <button className="delete-expense" onClick={() => deleteExpense(expense)}>X</button>
+            <button className="delete-expense" onClick={() => deleteExpense(expense)}><Icon name="delete" /></button>
         </div>
     );
 };
