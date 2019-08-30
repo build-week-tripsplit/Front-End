@@ -35,7 +35,7 @@ const SignUpForm = ({ errors, touched, status }) => {
                         </div>
 
                         <div className="form-input field-item-last">
-                            <Field type="text" name="password" placeholder="Password" />
+                            <Field type="password" name="password" placeholder="Password" />
                             {touched.password && errors.password && <p>{errors.password}</p>}
                         </div>
                     </div>
