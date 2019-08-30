@@ -1,17 +1,36 @@
-# Front-End
-Proposal
+# Trip Split - Front-End
 
-    Description
-Pitch: Tired of paying for a friends uber ride or lunch while on vacation and never getting paid back? Trip split saves the day by keeping track and telling each person they owe money.
+Instead of scrambling at the end of a trip or a dinner to figure out who pays for what, Trip Split keeps things simple. Everything is divided equally and there’s no more guessing game involved. No need to whip out the calculator on your iPhone after an uber ride and you can plan out trips in advance so you’re always on budget.
+
+##Tech Stack
+- HTML/CSS
+- React
+- Redux
+- Semantic UI
+- Axios
+- Styled Components
+- Moment.JS
+- React Router
+- Yup
+- Formik
+
+
+---
+###Proposal (Product Canvas)
+
+
+    Pitch
+Tired of paying for a friends uber ride or lunch while on vacation and never getting paid back? Trip split saves the day by keeping track and telling each person they owe money.
  
-MVP:
+    MVP
 Onboarding process for a new user to create a profile.
 Ability to create a trip, including number of people on the trip, names of people on the trip, destination, and dates. Ability to edit or delete this information.
 Ability to create a trip expense item title, price, who paid for it, number of people that paid for it, and names of people that paid for it.
 Ability to ‘close’ trip and total it out. Ability to view a trip summary page that gives a final total that each person owes or is owed (look at the total trip expenses, divide by the total number of people, and balance that with the total amount each person already paid).
 Homepage to see list of current or past trips.
  
-Stretch: Ability to add friends, and select a friends profile when adding trip members. Ability to add pictures to user profile. Ability for multiple users to be connected to and editing the same trip (viewing total trip expenses, even if added by another user).  Connect venmo so each person can repay their friends.
+    Stretch 
+Ability to add friends, and select a friends profile when adding trip members. Ability to add pictures to user profile. Ability for multiple users to be connected to and editing the same trip (viewing total trip expenses, even if added by another user).  Connect venmo so each person can repay their friends.
 
 
 - What problem does your app solve?
@@ -22,8 +41,8 @@ Stretch: Ability to add friends, and select a friends profile when adding trip m
 
 - What is the mission statement?
     Tired of paying for a friends uber ride or lunch while on vacation and never getting paid back? Trip split saves the day by keeping track and telling each person they owe money.
-Features
 
+    Features
 - What features are required for your minimum viable product?
  
 Onboarding process for a new user to create a profile.
@@ -37,8 +56,8 @@ Homepage to see list of current or past trips.
 
 - What do the top 3 similar apps do for their users?
     Venmo, SplitWise, QuickPay, CashApp. They let users pay their friends for bills, trips etc. But they don’t actually split the bills between multiple people/groups.
-Frameworks - Libraries
 
+    Frameworks - Libraries
 - What 3rd party frameworks/libraries are you considering using?
     Axios, React, Redux, Formik/Yup.
 
@@ -56,7 +75,8 @@ For Data Scientists
 - Write a description for what the DS problem is (what uncertainty/prediction are we trying to do here? Sentiment analysis? Why is this a useful solution to a problem?)
 - A target (e.g. JSON format or such) for output that DS students can deliver to web/other students for them to ingest and use in the app
 
-Target Audience
+
+    Target Audience
 
 - Who is your target audience? Be specific.
     People who travel & people with friends.
@@ -70,13 +90,14 @@ Target Audience
 - Have you validated the problem and your solution with your target audience? How?
     
 
-Research
+    Research
 
 - Research thoroughly before writing a single line of code. Solidify the features of your app conceptually before implementation. Spend the weekend researching so you can hit the ground running on Monday.
 https://projects.invisionapp.com/share/B2TLXF7MYD8#/screens/380431611_Trip_Split_Revised_-_Homepage_-1-
 Prototype Key Feature(s)
 
 - This is the “bread and butter” of the app, this is what makes your app yours. Calculate how long it takes to implement these features and triple the time estimated. That way you’ll have plenty of time to finish. It is preferred to drop features and spend more time working on your MVP features if needed.
+
 
 User Onboarding (login & sign-up form): 5 hours
 
