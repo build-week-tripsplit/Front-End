@@ -25,15 +25,15 @@ Search Text: Roboto Regular (16px)
 Button Text: Roboto Medium (16px)
 */
 
-
-
 body {
+  background:#F9FBFC !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -55,136 +55,96 @@ code {
 
 /* LANDING PAGE & SIGN-UP & LOG-IN */
 
-.login-form {
-  width: 35%;
-  align-items: center;
-  height: 80%;
-  position: absolute;
-  top: 0; 
-  bottom: 0; 
-  right: 0; 
-  left: 0;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.sign-up-form {
-  width: 50%;
-  align-items: center;
-  height: 80%;
-  position: absolute;
-  top: 0; 
-  bottom: 0; 
-  right: 0; 
-  left: 0;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
 h3 {
   font-family: "Roboto Bold", sans-serif;
   font-size: 16px;
   color: #5C6070;
 }
 
-.login-form h3 {
-  margin-top: 50px;
-  margin-left: -100px;
+.login-fields form{
+  display:flex;
+  flex-direction:column;
+  width: 80%;
+  margin:0 auto;
+  
 }
 
-.sign-up-form h3 {
-  margin-top: 50px;
-  margin-left: -100px;
+.sign-up-form{
+  width:80%;
+  margin:0 auto;
+  padding:2% 0%;
 }
 
-.login-form Form {
-  margin-top: 30px;
-  width: 90%;
+.login-form{
+  padding:2% 0%;
 }
 
-.sign-up-form Form {
-  width: 90%;
-}
-
-.login-fields {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: #B9BEC6;
-  border-radius: 5px;
-}
-
-.sign-up-fields {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: #B9BEC6;
-  border-radius: 5px;
-  color: white;
-  font-family: "Roboto Regular", 'sans-serif';
-}
-
-.form-input {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-input label {
-  font-size: 12px;
-  font-family: "Roboto Bold", sans-serif;
-}
-
-.names-div {
-  display: flex;
+.login-input-fields{
+  background:white;
+  border:1px solid #B9BEC6;
+  border-radius: 4px;
+  width:60%;
+  margin:0 auto;
+  padding:2% 0%;
+  display:flex;
+  flex-direction:column;
   justify-content: center;
-  width: 95%;
-  margin-top: 20px;
+  align-items:center;
 }
 
-.field-item-Fname {
-  width: 40%;
+.login-input-fields input{
+  width:70%;
+    border-radius:8px;
+    background:#f9fbfc;
+    margin:2% 0%;
+    padding: 2% 2%;
+  
 }
 
-.field-item-Fname .name {
-  width: 70%;
-}
-.field-item-Lname {
-  width: 40%;
+.icon-logo{
+  color:#6da4f8;
+  padding:2% 1%;
 }
 
-.field-item-Lname .name {
-  width: 70%;
-}
+.sign-up-fields{
+  background:white;
+  border:1px solid #B9BEC6;
+  border-radius: 4px;
+  width:60%;
+  margin:0 auto;
+} 
 
-.field-item-last {
-  margin-top: 10px;
-  padding-bottom: 30px;
-}
 
-.field-item {
-  margin: 10px 0;
-  height: 25px;
-  width: 95%;
+.form-input input  {
+    width:70%;
+    border-radius:8px;
+    background:#f9fbfc;
+    margin:2% 0%;
+    padding: 2% 2%;
 }
 
 .button-style-main {
-  width: 80%;
-  height: 35px;
-  margin-top: 30px;
+  width: 30%;
   color: #6DA4F8;
   font-weight: bold;
   background-color: white;
   border: 2px solid #6DA4F8;
   border-radius: 5px;
+  padding:1% 0%;
+  margin:2% auto;
 }
 
 .button-style-main:active {
   color: white;
   background-color: #6DA4F8;
+}
+
+.button-style-main.trip-button{
+  width:20%;
+}
+
+.side-button{
+  margin: 2% 1%;
 }
 
 /* LANDING PAGE */
@@ -245,9 +205,10 @@ h1 {
 /* EXPENSES PAGES */
 
 .expenses-list {
-  background: white;
+  background: #F7F9FC;
+  border-radius: 3px;
   margin: 10px 0;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 
 .expenses-summary {
@@ -259,9 +220,10 @@ h1 {
 }
 
 .expense {
-  background: #EBE9E7;
-  border: 1px solid black;
+  background: white;
   border-radius: 3px;
+  box-shadow: 0 0 2px;
+  border: 0.1px solid grey;
   box-shadow: .5px 1px;
   margin: 5px 15%;
   display: flex;
@@ -269,13 +231,56 @@ h1 {
   align-items: center;
 }
 
-.expense h3 {
-  padding-left: 10%;
-}
-
 .expense p {
   color: red;
-  padding-right: 10%;
+  padding-top: 14px;
+  text-align: center;
+}
+
+.expense-name-date {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0 !important;
+}
+
+.expense-name-date h3 {
+  margin-bottom: 5px;
+  margin-top: 3px;
+}
+
+.expense-name-date h6 {
+  margin: 0 0;
+}
+
+.expenses-form-container {
+  margin-top: 8%;
+  margin-bottom: 30px;
+}
+
+.expenses-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 40%;
+}
+
+.expenses-form input {
+  margin: 10px 0;
+}
+
+.expense-button {
+  margin-left: 10px;
+  border-radius: 4px;
+  width: 50px;
+  height: 30px;
+}
+
+.expenses-form label {
+  margin-top: 6px;
+  margin-bottom: -10px;
+  color: #5C6070
 }
 
 
@@ -300,24 +305,46 @@ h1 {
   margin: 0 0 !important; 
 }
 
+.delete-expense {
+  margin-right: 5%;
+  width: 30px;
+  background:#ffffff;
+  color:black;
+  border:none;
+  cursor:pointer;
+}
+
 
 /* TRIP LIST */
 
 .trips {
   margin-top: 5%;
+  margin-left: 5%;
   display: flex;
   justify-content: space-evenly;
+  flex-flow: row wrap;
 }
 
-.trip {
-
+.trip-card {
+  min-width: 33%;
+  max-width: 70%;
+  margin: 10px 0;
 }
 
+.ui .card {
+  width: 100%;
+}
+
+.selected-trip {
+  display: flex;
+  justify-content: center;
+}
 
 /* TRIP FORM */
 
 .tripForm-container {
   margin-top: 8%;
+  margin-bottom: 30px;
 }
 
 .tripForm {
