@@ -1,5 +1,6 @@
 import React from "react";
 import {Card, Feed} from 'semantic-ui-react';
+import moment from "moment";
 
 function Trip({ trip }) {
   return (
@@ -14,7 +15,8 @@ function Trip({ trip }) {
         <Feed.Event>
           <Feed.Label image='./../flight_unsplash.jpg' />
           <Feed.Content>
-            <Feed.Date content={trip.start_date} />  {//Needs an epoch conversion.
+            
+            <Feed.Date content={moment(trip.start_date).format("MMMM Do YYYY")}/>  {//Needs an epoch conversion.
             }
             <h3>{trip.location}</h3>
             <Feed.Summary>

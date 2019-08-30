@@ -58,7 +58,9 @@ const IndividualTrip = props => {
         <>
             <Header />
             <NavBar />
-            <Trip key={trip.id} trip={trip} />
+            <div className="selected-trip">
+            <Trip  key={trip.id} trip={trip} />
+            </div>
             <h4>Trip Status: {trip.complete ? "Closed" : "Open"}</h4>
             <h2>Your Summary: ${totalCost} spent.</h2>
             <h2>You Paid: ${personalCost}</h2>
