@@ -13,7 +13,7 @@ const StyledDiv = styled.div`
 
 const Header = () => {
     return (
-        <StyledDiv>
+        <StyledDiv className="topHeader">
             <Icon name="map" className="icon-logo" size="huge" />
             <h1 className="header-h1">TripSplit</h1>
         </StyledDiv>
