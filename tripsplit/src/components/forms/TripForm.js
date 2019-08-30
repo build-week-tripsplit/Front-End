@@ -45,7 +45,7 @@ const TripForm = ({ addTrip, history }) => {
 
         addTrip(history, postObj);
     }
-    console.log('state', state);
+
     function handleChanges(e) {
         setState({ ...state, [e.target.name]: e.target.value });
     }

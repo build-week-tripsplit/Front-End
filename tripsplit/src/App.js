@@ -32,7 +32,8 @@ function App(props) {
                 <Route exact path="/triplist" render={() => <TripListContainer />} />
                 <Route path="/createTrip" render={props => <CreateTrip {...props} />} />
                 <Route path="/triplist/:id" render={props => <IndividualTrip {...props} />} />
-                <Route path="/expenseform" render={() => <CreateExpense />} />
+                <Route exact path="/expenseform" render={props => <CreateExpense {...props} />} />
+                <Route path="/expenseform/:id" render={props => <CreateExpense {...props} />} />
             </Switch>
         </div>
     );
