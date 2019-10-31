@@ -14,13 +14,13 @@ const SignUpForm = ({ errors, touched, status }) => {
                     <div className="sign-up-fields">
                         <div className="names-div">
                             <div className="form-input name field-item-Fname">
-                                <Field type="text" name="firstName" placeholder="First Name" />
-                                {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}
+                                <Field type="text" name="first_name" placeholder="First Name" />
+                                {touched.first_name && errors.first_name && <p>{errors.first_name}</p>}
                             </div>
 
                             <div className="form-input name field-item-Lname">
-                                <Field type="text" name="lastName" placeholder="Last Name" />
-                                {touched.lastName && errors.lastName && <p>{errors.lastName}</p>}
+                                <Field type="text" name="last_name" placeholder="Last Name" />
+                                {touched.last_name && errors.last_name && <p>{errors.last_name}</p>}
                             </div>
                         </div>
 
@@ -50,10 +50,10 @@ const SignUpForm = ({ errors, touched, status }) => {
 };
 
 const FormikSignUpForm = withFormik({
-    mapsPropsToValues({ firstName, lastName, email, username, password }) {
+    mapsPropsToValues({ first_name, last_name, email, username, password }) {
         return {
-            firstName: firstName || '',
-            lastName: lastName || '',
+            first_name: first_name || '',
+            last_name: last_name || '',
             email: email || '',
             username: username || '',
             password: password || ''
@@ -61,8 +61,8 @@ const FormikSignUpForm = withFormik({
     },
 
     validationSchema: Yup.object().shape({
-        firstName: Yup.string().required('First Name Required'),
-        lastName: Yup.string().required('Last Name Required'),
+        first_name: Yup.string().required('First Name Required'),
+        last_name: Yup.string().required('Last Name Required'),
         email: Yup.string()
             .email('Email not valid')
             .required('Email Required'),
@@ -74,8 +74,8 @@ const FormikSignUpForm = withFormik({
 
     handleSubmit(values, { props }) {
         const register = {
-            firstName: values.firstName,
-            lastName: values.lastName,
+            first_name: values.first_name,
+            last_name: values.last_name,
             email: values.email,
             username: values.username,
             password: values.password
